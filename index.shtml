@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS195u | Topics in 3D Game Engine Development</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./js/nav.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__wrapper">
+            <ul class="menu">
+                <li class="menu__item menu__item--right menu__item--bold">
+                    <a class="menu__item__link" href="index.shtml">
+                        <i class="fa fa-code" aria-hidden="true"></i>
+                        CS195u
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu menu--right menu--large">
+                <li class="menu__item">
+                    <a class="menu__item__link" href="index.shtml">
+                        Home
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="lectures.shtml">
+                        Classes
+                    </a>
+                </li>
+                <li class="menu__item menu__item--selected">
+                    <a class="menu__item__link" href="assignments.shtml">
+                        Assignments
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="staff.shtml">
+                        Staff
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="docs.shtml">
+                        Docs
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu menu--right menu--small">
+                <li class="menu__item">
+                    <a class="menu__toggle" href="javascript:void(0)">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="transform__wrapper">
+        <div class="jumbotron jumbotron--mini">
+            <div class="jumbotron__message jumbotron__message--mini">
+                <h1 class="jumbotron__message__header">🔮 3D Game Engines 🔮</h1>
+            </div>
+        </div>
+
+        <section class="content">
+            <div class="content__wrapper">
+                <div class="post">
+                    <div class="post__header">
+                        <h2>Overview</h2>
+                    </div>
+                    <div class="post__content">
+                        <p>CSCI1950U functions like a group independent study where each student will implement their own 3D game engine in C++. Topics covered include engine architecture and design, collision systems, AI systems, and independently chosen topics implemented in a final project such as networking, particles, animation, or rigidbody physics.</p>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post__header">
+                        <h2>Structure</h2>
+                    </div>
+                    <div class="post__content">
+                        <p>In the style of an independent study, students will learn the material from the lecture slides as assigned reading outside of class. Class time will be used to review the material and to work on projects with help from the TAs, so make sure to bring your laptops to class! 
+                            <!-- For more details about the course, check out the <a href="/docs.shtml">syllabus</a>.</p> -->
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post__header">
+                        <h2>Discord</h2>
+                    </div>
+                    <div class="post__content">
+                        <p>Instead of using Ed or Piazza to answer questions, we'll be using a Discord server. Join it <a href="https://discord.gg/hbjH7CdzRa">here</a>!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <footer class="footer">
+        &#169; 2022 CS195u TA Staff | Computer Science Department | Brown University
+    </footer>
+
+    </div>
+
+</body>
+</html>

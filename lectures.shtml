@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS195u | Topics in 3D Game Engine Development</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./js/nav.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__wrapper">
+            <ul class="menu">
+                <li class="menu__item menu__item--right menu__item--bold">
+                    <a class="menu__item__link" href="index.shtml">
+                        <i class="fa fa-code" aria-hidden="true"></i>
+                        CS195u
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu menu--right menu--large">
+                <li class="menu__item">
+                    <a class="menu__item__link" href="index.shtml">
+                        Home
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="lectures.shtml">
+                        Classes
+                    </a>
+                </li>
+                <li class="menu__item menu__item--selected">
+                    <a class="menu__item__link" href="assignments.shtml">
+                        Assignments
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="staff.shtml">
+                        Staff
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="docs.shtml">
+                        Docs
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu menu--right menu--small">
+                <li class="menu__item">
+                    <a class="menu__toggle" href="javascript:void(0)">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="transform__wrapper">
+      <div class="jumbotron jumbotron--mini">
+          <div class="jumbotron__message jumbotron__message--mini">
+              <h1 class="jumbotron__message__header">📚 Classes 📚</h1>
+          </div>
+      </div>
+
+      <section class="content">
+          <div class="content__background"></div>
+        <div class="content__wrapper">
+            <p class="alert">Make sure you do the reading before the day listed and prepare to have questions to bring up in class! Classes will meet in person in CIT room 506.</p>
+        </div>
+          <div class="content__wrapper">
+            <table class="inventory">
+              <tr><th>Date</th><th>Class</th><th>Topic</th><th>PDF</th><th>Download</th></tr>
+
+              <tr><td>1/31</td><td>1</td><td>Course Intro, Basic Engine Architecture, Camera and Graphics</td>
+                  <td>
+                      <a href="https://docs.google.com/presentation/d/12fe1UCy_DepZvGy4qSrHOh7LlPqPXIFTNuD2jo8CFAg/edit?usp=sharing">slides</a>
+                    </td><td>
+                        <a href="https://docs.google.com/presentation/d/12fe1UCy_DepZvGy4qSrHOh7LlPqPXIFTNuD2jo8CFAg/edit?usp=sharing">slides</a>
+                    </td>
+              </tr>
+              <tr><td>2/7</td><td>2</td><td>Application Class and Screen Management</td>
+                <td>
+                    <a href="https://docs.google.com/presentation/d/1tUzssGg_ptwIo3HXEwd0IZIY1AIniyKTPXBDQsKjapA/edit?usp=sharing">slides</a>
+                </td><td>
+                    <a href="https://docs.google.com/presentation/d/1tUzssGg_ptwIo3HXEwd0IZIY1AIniyKTPXBDQsKjapA/edit?usp=sharing">slides</a>
+                </td>
+              </tr>
+              <tr><td>2/14</td><td>3</td><td>Game Worlds, Component-Based Design, Systems, Cylinder-Cylinder Collisions</td>
+                <td>
+                    <a href="https://docs.google.com/presentation/d/1MWnSqxmo9SCFgTjZidnAba3Qi8-LQMMU/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td><td>
+                    <a href="https://docs.google.com/presentation/d/1MWnSqxmo9SCFgTjZidnAba3Qi8-LQMMU/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td>
+              </tr>
+              <tr><td>2/21</td><td></td><td>🎁 Long Weekend - No Class 🎁</td>
+                  <td></td><td></td>
+               </tr>
+              <tr><td>2/28</td><td>4</td><td>Sphere/AAB/Cylinder Collisions, Ellipsoid/Triangle Collisions</td>
+                <td>
+                    <a href="https://docs.google.com/presentation/d/1ja2Q4FWowQRFJMWf3E6yGgU332Sjlgzo/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td><td>
+                    <a href="https://docs.google.com/presentation/d/1ja2Q4FWowQRFJMWf3E6yGgU332Sjlgzo/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td>
+               </tr>
+              <tr><td>3/7</td><td>5</td><td>GJK Algorithm, Expanding Polytope Algorithm, Physics</td>
+                <td>
+                    <a href="https://docs.google.com/presentation/d/16puq3HahiN9ecARWH6uCqBpygeUPuodD/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td><td>
+                    <a href="https://docs.google.com/presentation/d/16puq3HahiN9ecARWH6uCqBpygeUPuodD/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td>
+               </tr>
+              <tr><td>3/14</td><td>6</td><td>Engine Optimizations</td>
+                <td>
+                    <a href="https://docs.google.com/presentation/d/1DRh4HNTwkxdvdZG8G9rMFtN4DV0CaWyo/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td><td>
+                    <a href="https://docs.google.com/presentation/d/1DRh4HNTwkxdvdZG8G9rMFtN4DV0CaWyo/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td>
+               </tr>
+              <tr><td>3/21</td><td>7</td><td>Platformer 2 Check-In</td>
+                <td></td><td></td>
+               </tr>
+              <tr><td>3/28</td><td></td><td>🌷 Spring Break - No Class 🌷</td>
+                <td></td><td></td>
+               </tr>
+              <tr><td>4/4</td><td>8</td><td>AI</td>
+                <td>
+                    <a href="https://docs.google.com/presentation/d/18tl6OSya35TDqM92qMhetod8EQyLe2e3/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td><td>
+                    <a href="https://docs.google.com/presentation/d/18tl6OSya35TDqM92qMhetod8EQyLe2e3/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td>
+              </tr>
+              <tr><td>4/11</td><td>9</td><td>Final Project Topics</td>
+                <td>
+                    <a href="https://docs.google.com/presentation/d/1YZB4nRSati7wmDlQjxLD-Q-thnrjEPFF/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td><td>
+                    <a href="https://docs.google.com/presentation/d/1YZB4nRSati7wmDlQjxLD-Q-thnrjEPFF/edit?usp=sharing&ouid=103060927400384849792&rtpof=true&sd=true">slides</a>
+                </td>
+               </tr>
+               <tr><td>4/18</td><td>10</td><td>Final Project Check-In 1</td>
+                <td></td><td></td>
+               </tr>
+               <tr><td>4/25</td><td>11</td><td>Final Project Check-In 2</td>
+                <td></td><td></td>
+               </tr>
+              <tr><td>5/2</td><td>12</td><td>Final Project Check-In 3</td>
+                <td></td><td></td>
+              </tr>
+              <tr><td>5/9</td><td>13</td><td>Final Project Check-In 4</td>
+                <td></td><td></td>
+            </tr>
+            <tr><td>5/13</td><td>14</td><td>Final Project Presentations</td>
+                <td></td><td></td>
+            </tr>
+            </table>
+          </div>
+      </section>
+      <footer class="footer">
+          &#169; 2022 CS195u TA Staff | Computer Science Department | Brown University
+      </footer>
+    </div>
+    <!--<div class="hl3confirmed"><img src="./1972_files/dogmeat_emoticon.png" onclick="toggleOrbs()"></div>-->
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!--#set var="title" value="Project 2: Platformer" -->
+<!--#set var="tab" value="Assignments" -->
+<!--#set var="basedir" value=".." -->
+<!--#include virtual="../stdhead.shtml" -->
+<header>
+  <h1>Project 2: Platformer</h1>
+</header>
+
+
+<section>
+  <h2>Introduction</h2>
+
+  <p>In this assignment you will create your own 3D platformer from scratch. You will start out by implementing collision detection and response for a player moving in a world made of triangles. Once this is in place, you will add enemies that use path-finding over a navigation mesh. Finally, you will add your own simple gameplay, including a way to win the game.</p>
+
+  <p>Note that the approaches to collision detection / response and path-finding in this assignment are used in many types of games, not just platformers. So, you may want to reuse some of your engine features for your final project.</p>
+
+  <p>Demos of each checkpoint are available in <code>/course/cs195u/demo/platformer</code>.</p>
+</section>
+
+
+<section>
+  <h2>Support Files</h2>
+
+  <p>The support code for this assignment is located at <code>/course/cs195u/asgn/platformer</code>. The code is very similar to what you received for Minecraft except it also includes an <a href="http://en.wikipedia.org/wiki/Wavefront_.obj_file">OBJ</a> loader, which you will need to load the collision and navigation meshes.</p>
+
+  <p>Debugging collision detection is a lot easier with the right tools, so we have also provided you with another support code project located in <code>/course/cs195u/asgn/collision_debugger</code>. This will be useful in weeks 1 and 2 to debug your collision detection and response code, and can even be used to debug your funnel algorithm in week 3, but should not be used as a starting point for your final platformer game.</p>
+
+  <p>The debugger contains several triangles and placeable start and end ellipsoids, which represent the player's movement over a single frame. The camera can be rotated by dragging the background and each ellipsoid can be moved by dragging on its bounding box. </p>
+</section>
+
+
+<section>
+  <h2>Requirements</h2>
+  <section>
+    <h3 id="week1">Week 1</h3>
+
+    <p>At the end of week one, you will have working analytic collision detection between an ellipsoid and a world composed of triangles. You should be working exclusively in the debugger project. Your code will need calculate the correct intersection point of the ellipsoid as it moves in a straight line from the start location to the end location in the debugger. Requirements:</p>
+
+    <ul>
+      <li>Analytic ellipsoid-triangle collision detection</li>
+      <li>Analytic ellipsoid-edge collision detection</li>
+      <li>Analytic ellipsoid-vertex collision detection</li>
+      <li>All collision tests return the correct parametric t value of collision</li>
+      <li>Location of ellipsoid at time of collision is drawn in the collision debugger</li>
+    </ul>
+  </section>
+  <section>
+    <h3 id="week2">Week 2</h3>
+
+    <p>At the end of week two, you will have an initial game engine for your platformer. You will be able to move the player through the world and properly respond to collisions. The debugger project will also be useful for this week, but you will need to build your engine implementation this week starting from the platformer project. Requirements:</p>
+
+    <ul>
+      <li>Collision debugger support code is not present</li>
+      <li>Collision detection routines each return the correct contact point</li>
+      <li>Collision response slides for at least three iterations of the sweep test in the horizontal plane</li>
+      <li>Collision response implemented with the straight sliding hack for ramps as explained in lecture</li>
+      <li>Engine can load the provided OBJs and has a parameter to easily load a different level</li>
+      <li>Must be able to move forward &amp; backward with W &amp; S keys and strafe left &amp; right with A &amp; D keys</li>
+      <li>Must be able to jump with spacebar when and only when the player is on the ground (Hint: Read the week 2 advice section)</li>
+      <li>Basic third-person camera (Eye point may be at a fixed offset from the player position, camera may go through walls), with mouse controls similar to Minecraft</li>
+    </ul>
+
+    <p>As always, remember that while good engine design is not strictly required, it makes your (and the TAs') lives easier.</p>
+  </section>
+  <section>
+    <h3 id="week3">Week 3</h3>
+
+    <p>At the end of week three, you will be able to plan paths through your environment. Requirements:</p>
+
+    <ul>
+      <li>Construct a graph from a navigation mesh, loaded from the provided OBJ file</li>
+      <ul>
+        <li>To show this, you must visualize the loaded navigation mesh</li>
+      </ul>
+      <li>Query for the polygon in the navigation mesh under a point</li>
+      <li>Search through the graph for a path between two polygons (use BFS, you don't have to use something complicated like Dijkstra's algorithm or A*)</li>
+      <li>Path generation via the funnel algorithm</li>
+      <ul>
+        <li>To show this, you must visualize the shortest path from the current player position to a target point</li>
+        <li>Must be able to change the target point to the current player position using a keypress</li>
+      </ul>
+    </ul>
+  </section>
+  <section>
+    <h3 id="week4">Week 4</h3>
+
+    <p>At the end of week four, you will have a complete platformer! Requirements:</p>
+
+    <ul>
+      <li>Must have at least one type of enemy that uses path-finding over a navigation mesh</li>
+      <ul><li>
+        This enemy must interact with the player in some way (e.g. push the player off ledges, shoot at the player, damage the player directly)
+      </li></ul>
+      <li>Must have an reasonably achievable win condition</li>
+      <li>Game must reset (or be resettable) on win or loss</li>
+      <li>Must not be possible for the game to enter an unwinnable and unloseable state</li>
+      <li>Must use orthographic projection to display some form of game UI</li>
+    </ul>
+  </section>
+</section>
+
+
+<section>
+  <h2>Advice</h2>
+
+  <section>
+    <h3>Week 1</h3>
+
+    <ul>
+      <li>Don't forget to divide by the ellipsoid radius!</li>
+      <li>You may want to use a naming convention that differentiates points in ellipsoid space (i.e. world space) from points in sphere space.</li>
+      <li>The position of the ellipsoid at the collision time can be found by linear interpolation with the t value between the start and end locations.</li>
+      <li>If you save the contact point of the collision (which is not required until week 2), drawing it to the screen can be helpful for debugging.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Week 2</h3>
+
+    <ul>
+      <li>First implement collision detection with only one iteration (aka no sliding). When you implement multiple sliding iterations, make sure to set the velocity for the next iteration using the leftover velocity from the the previous iteration, not the original velocity.</li>
+      <li>Split up movement into its y-component and its xz-component. This technique can prevent sliding down ramps if you set the number of collision iterations for the y-component to one. Additionally, you can use the result of the y-component collision test, along with the player's velocity, to determine if the player is on the ground.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Week 3</h3>
+
+    <ul>
+      <li>The Qt framework has built-in support for sets and hash maps (QSet and QHash). These will come in handy when discovering shared edges between polygons and building the graph. One way to do this would be to use the following algorithm over the navigation mesh:
+        <pre><code>QHash&lt;QPair&lt;int, int&gt;, QList&lt;Triangle *&gt; &gt; edges
+for each triangle t:
+    for each edge e in t:
+        QPair&lt;int, int&gt; key = [min(e.v0, e.v1), max(e.v0, e.v1)]
+        edges[key] += t</code></pre>
+      </li>
+
+      <li>This gives you a map of edges to lists of triangles that share that edge where edges are represented as a pair of integers (the minimum and maximum vertex indices for that edge). Note that while it is possible for more than two triangles to share an edge in an arbitrary mesh, the provided meshes do not have that problem.</li>
+      <li>Overlaying debug information on top of your game environment will be very helpful. You can look at the debug information in the platformer demo as an example (it can be toggled with the tab key).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Week 4</h3>
+
+    <ul>
+      <li>Remember to turn off depth testing when drawing your UI, otherwise objects in the screen close to the camera may actually occlude the UI when they get too close.</li>
+    </ul>
+  </section>
+</section>
+
+
+<section>
+  <h2>Handing In</h2>
+
+  <p>To hand in checkpoint <var>n</var> (where <var>n</var> is 1, 2, or 3), run <code>cs195u_handin platformer_week<var>n</var></code> in the directory containing your <code>.pro</code> file. For example, to hand in week 1 you would run <code>cs195u_handin platformer_week1</code>. You will receive a confirmation email when a hand-in is successful.</p>
+</section>
+<!--#include virtual="../stdfoot.shtml" -->

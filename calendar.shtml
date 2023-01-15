@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS1950U | Topics in 3D Game Engine Development</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./js/nav.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__wrapper">
+            <ul class="menu">
+                <li class="menu__item menu__item--right menu__item--bold">
+                    <a class="menu__item__link" href="index.shtml">
+                        <i class="fa fa-code" aria-hidden="true"></i>
+                        CS1950U
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu menu--right menu--large">
+                <li class="menu__item">
+                    <a class="menu__item__link" href="index.shtml">
+                        News
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="lectures.shtml">
+                        Lectures
+                    </a>
+                </li>
+                <li class="menu__item menu__item--selected">
+                    <a class="menu__item__link" href="assignments.shtml">
+                        Assignments
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="calendar.shtml">
+                        Calendar
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="staff.shtml">
+                        Staff
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item__link" href="docs.shtml">
+                        Docs
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu menu--right menu--small">
+                <li class="menu__item">
+                    <a class="menu__toggle" href="javascript:void(0)">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="transform__wrapper">
+        <div class="jumbotron jumbotron--mini">
+            <div class="jumbotron__message jumbotron__message--mini">
+                <h1 class="jumbotron__message__header">Calendar</h1>
+            </div>
+        </div>
+
+        <section class="content">
+            <div class="content__background"></div>
+            <div class="content__wrapper">
+                <div class="postlist">
+                    <div class="post">
+                        <div class="post__header">
+                            <h2>TA Hours are held at the following times:</h2>
+                        </div>
+                        <div class="post__content">
+                            <p>
+                                TBD
+<!--                                 Sunday:&nbsp;&emsp;5-7pm in the Moonlab (CIT 227)<br>
+                                Monday:&nbsp;&emsp;6-8pm in the Fishbowl (CIT 271)<br>
+                                Tuesday:&emsp;8-10pm in the Moonlab (CIT 227)<br> -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="post__header">
+                            <h2>Design checks are held in CIT 201 at the following times:</h2>
+                        </div>
+                        <div class="post__content">
+                            <p>
+<!--                                 Friday:&nbsp;&emsp;&emsp;5-7pm<br>
+                                Saturday:&emsp;12-5pm<br> -->
+                                TBD
+                            </p>
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="post__content">
+                            <iframe id="googleCalendar" src="https://calendar.google.com/calendar/embed?src=brown.edu_jdaov696pp8elau2a8t1500h9k%40group.calendar.google.com&amp;ctz=America/New_York" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            &#169; 2018 CS1950U TA Staff | Computer Science Department | Brown University
+        </footer>
+    </div>
+    <!--<div class="hl3confirmed"><img src="./1972_files/dogmeat_emoticon.png" onclick="toggleOrbs()"></div>-->
+</body>
+</html>

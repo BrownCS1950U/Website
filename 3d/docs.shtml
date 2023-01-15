@@ -1,0 +1,43 @@
+<!--#set var="title" value="Docs" -->
+<!--#set var="tab" value="Docs" -->
+<!--#set var="basedir" value="." -->
+<!--#include virtual="stdhead.shtml" -->
+<section>
+  <h1>Documents</h1>
+  Some documents that may be useful to you in taking this course:
+  <ul>
+    <li><a href="docs/collab.pdf">Collaboration Policy</a></li>
+    <li><a href="docs/missive.pdf">Course Missive</a></li>
+  </ul>
+</section>
+
+<section>
+  <h1>Resources</h1>
+
+  <p>Useful game-related libraries (open source):</p>
+
+  <ul>
+    <li><a href="http://www.jenkinssoftware.com/">RakNet: Production quality C++ networking engine, free license for indie games</a></li>
+    <li><a href="http://icculus.org/manymouse/">ManyMouse: Cross-platform input from multiple mice</a></li>
+    <li><a href="http://code.google.com/p/recastnavigation/">Recast and Detour: Navigation mesh generation and path finding</a></li>
+  </ul>
+
+  <p>Suggested extra material:</p>
+
+  <ul>
+    <li><a href="http://realtimecollisiondetection.net/blog/">Real-Time Collision Detection</a></li>
+    <li><a href="http://altdevblogaday.com/">#AltDevBlogADay</a></li>
+    <li><a href="http://fgiesen.wordpress.com/2011/07/09/a-trip-through-the-graphics-pipeline-2011-index/">A trip through the Graphics Pipeline 2011</a></li>
+    <li><a href="http://gafferongames.com/networking-for-game-programmers/">Networking for Game Programmers</a> and <a href="http://gafferongames.com/2010/03/11/gdc-2010-networked-physics-slides-demo/">Networking for Physics Programmers</a></li>
+  </ul>
+
+  <p>Fun:</p>
+
+  <ul>
+    <li>The Official <a href="resources/195upack.zip">CS195U Texture Pack</a> for Minecraft</li>
+  </ul>
+    <p style="text-align:center"><iframe width="630" height="472" src="//www.youtube.com/embed/34tPeh4s24E" frameborder="0" allowfullscreen></iframe></p>
+</section>
+
+
+<!--#include virtual="stdfoot.shtml" -->

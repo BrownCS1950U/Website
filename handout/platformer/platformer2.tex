@@ -1,0 +1,43 @@
+\documentclass{../cs195u}
+
+\usepackage{url}
+
+\asgn{Platformer 2}
+\due{March 1, 2021}
+
+\begin{document}
+ \section*{Introduction}
+
+Now that your engine supports movement around an arbitrary environment mesh, let's optimize how it handles collisions!
+
+
+ \section*{Directions}
+  
+For this checkpoint, you will implement a spatial organization data structure. You may choose which data structure you implement (BVH, Uniform Grid, Hierarchical Grid, Octree, K-D Tree, BSP Tree). Then, you will use this data structure to speed up your collision checking between the player and the static environment mesh. After that, you will use a data structure to speed up your collision checking between dynamic objects. You may use different data structures to handle static and dynamic objects.
+
+
+  \section*{Design Check}
+  \begin{itemize}
+   \item What data structure(s) will you implement? How will your data structure(s) handle static and dynamic objects?
+   \item What will be the member variables of the nodes of your data structure?
+   \item How will you build your data structure?
+   \item How will you traverse your data structure?
+   \item Will you need to update your data structure as the game state changes?
+  \end{itemize}
+
+  \section*{Engine Requirements}
+  \begin{itemize}
+    \item Spatial organization data structure that handles collisions with static objects
+    \item Spatial organization data structure that handles collisions between dynamic objects 
+ \end{itemize}
+ 
+ \section*{Game Requirements}
+  \begin{itemize}
+    \item Screen populated with enough dynamic objects (e.g. collidable cylinders) to demonstrate benefit of spatial organization data structure
+    \item Screen with a large enough environment to demonstrate benefit of spatial organization data structure
+   \end{itemize}
+
+ \section*{Handing In}
+Hand in the entire directory tree for your project, including both your engine and game code. You must also include a README file that describes how to verify each requirement, and an INSTRUCTIONS file that describes how to play your game. To hand in, run \texttt{cs195u\_handin platformer2} from the top level directory of your project (which should be where your Qt pro file is). \textbf{Please do not hand in the build files from your project.}
+
+\end{document}

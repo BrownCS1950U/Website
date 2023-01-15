@@ -1,0 +1,63 @@
+\documentclass{../cs195u}
+
+\usepackage{url}
+
+\asgn{Platformer 1}
+\due{Feb. 22, 2021}
+
+\begin{document}
+ \section*{Introduction}
+
+In this assignment you will create your own 3D platformer from scratch. You will start out by implementing collision detection and response for a player moving in a world made of triangles.
+
+
+ \section*{Directions}
+  
+You get to choose whether you implement ellipsoid-triangle collisions or the GJK algorithm and the Expanding Polytope Algorithm. If you are implementing ellipsoid-triangle collisions, you will want to use the collision debugger. You can find the project at \path{/course/cs195u/asgn/collision_debugger}. If you are implementing the GJK algorithm and Expanding Polytope Algorithm, you will want to use the GJK debugger. You can find the project at \path{/course/cs195u/asgn/gjk_debugger}. 
+
+You will port your collision code to your engine once your collisions are working. Then, you will load obj files into your engine. There are obj files and corresponding texture maps in \path{/course/cs195u/asgn/platformer}. Finally, you will create smooth player movement across the environment.
+
+
+  \section*{Design Check for Ellipsoid-Triangle Collisions}
+  \begin{itemize}
+   \item What transformations do we apply to collide an ellipsoid with a triangle?
+   \item Give analogies for the three cases required to collide a sphere with a triangle. For example, ``sphere-plane collision is the same thing as [blank].''
+   \item What are the relevant pieces of information to return for when an ellipse collides with a triangle?
+   \item What is the ``mtv slide'', and why is it necessary for proper movement? Give a demonstration of a few iterations of the slide.
+   \item What is the purpose of the "nudging" hack?
+  \end{itemize}
+  
+  \section*{Design Check for GJK Algorithm}
+  \begin{itemize}
+   \item What is a support function for a convex shape?
+   \item Explain what a Minkowski Difference is and how it relates to the GJK algorithm.
+   \item Why do we need to use the Expanding Polytope Algorithm after detecting a collision with the GJK algorithm?
+   \item How do we expand the polytope in EPA?
+  \end{itemize}
+
+  \section*{Requirements for Ellipsoid-Triangle Collisions}
+  \begin{itemize}
+    \item Analytic ellipsoid-triangle collision detection
+   \begin{itemize}
+    \item Ellipsoid-triangle collision
+    \item Ellipsoid-edge collision
+    \item Ellipsoid-vertex collision
+    \item All collision tests return the correct parametric t value
+    \item Collision routines return the contact point
+   \end{itemize}
+   \item Loading in environment obj file
+    \item Smooth player movement across environment
+ \end{itemize}
+ 
+ \section*{Requirements for GJK}
+  \begin{itemize}
+    \item GJK implementation
+    \item EPA implementation
+    \item Loading in environment obj file
+    \item Smooth player movement across environment
+   \end{itemize}
+
+ \section*{Handing In}
+Hand in the entire directory tree for your project, including both your engine and game code. You must also include a README file that describes how to verify each requirement, and an INSTRUCTIONS file that describes how to play your game. To hand in, run \texttt{cs195u\_handin platformer1} from the top level directory of your project (which should be where your Qt pro file is). \textbf{Please do not hand in the build files from your project.}
+
+\end{document}

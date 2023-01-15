@@ -1,0 +1,14 @@
+				</div> <!-- content -->
+				<div id="invmr"></div>
+			</div> <!-- invrow -->
+			<div class="invrow">
+				<div id="invdl"></div>
+				<div id="invd"></div>
+				<div id="invdr"></div>
+			</div>
+		</div> <!-- inv -->
+		<div id="banner">
+			<img id="logo-img" src="<!--#echo var='basedir' -->/css/banner-3D2.png"/><br/>
+		</div>
+	</body>
+</html>

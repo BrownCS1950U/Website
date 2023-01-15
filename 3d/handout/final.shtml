@@ -1,0 +1,106 @@
+<!--#set var="title" value="Final Project" -->
+<!--#set var="tab" value="Assignments" -->
+<!--#set var="basedir" value=".." -->
+<!--#include virtual="../stdhead.shtml" -->
+<header>
+  <h1>Final Project</h1>
+</header>
+
+
+<section>
+  <h2>Introduction</h2> 
+
+  <p>For your final project, you get the chance to create your own 3D game! The final project is unlike previous assignments in that you are expected to create a polished final result, as opposed to a simple demo of an engine. Your engine should be built for the technical needs of your game. This is very important; if you spend 2 of your 5 weeks implementing an engine feature that doesn't fit into your game, it will be very difficult to complete a satisfactory game. Keep in mind that the difficulty of your implementation should be scaled to the number of people in your group.</p>
+
+  <p>We recommend using a private <a href="http://www.bitbucket.org">BitBucket</a> git repository for source control. Note that any source control solution you use must be private so members of other final project groups cannot read your code. You may of course make the source public after the semester is over. </p>
+</section>
+
+
+<section>
+  <h2>Requirements</h2>
+
+  <section id="week1">
+    <h3>Week 1</h3>
+
+    <p>In the first week, you will get your project up and running. You must have a working source control system in place. You will want to have a long design meeting with your group members to discuss and document code structure, component interfaces, libraries you will be using, and to refine gameplay ideas. After that you should begin your engine feature implementation. The implementation may use code from any group members' implementations of projects so far this semester.</p>
+
+    <ul>
+      <li>All engine components must at least be fully <a href="http://en.wikipedia.org/wiki/Method_stub">stubbed out</a> and integrated into one project. This includes full integration with any libraries being used. We also strongly recommend beginning engine feature implementation as well, but it is not required.
+      <li>The project must run without crashing (it's fine if it's a black window)</li>
+    </ul>
+  </section>
+
+  <section id="week2">
+    <h3>Week 2</h3>
+
+    <p>All engine features must be roughly functional by this checkpoint. It's a good idea to test engine features together as soon as possible, even if the feature isn't complete. For example, collision detection can be tested with AI even before networking is functional by creating a stub networking client that pretends to be connected. Furthermore, you will also implement basic parts of your gameplay (e.g. player motion), though your program will most likely not be interesting yet. All games will be playtested in class, after which groups will receive all feedback anonymously (consider it a closed alpha test).</p>
+
+    <ul>
+      <li>Mostly finished engine feature implementation</li>
+      <li>Basic gameplay implementation</li>
+    </ul>
+  </section>
+
+  <section id="week3">
+    <h3>Week 3</h3>
+
+    <p>By this week you should have a complete but rough game implementation that can be won, ready for playtesting with the public. You will need to playtest at least 5 people who are not in the class for every member of your group and write down notes for each playtesting session (consider it an open beta test). Public playtesting may be done through some combination of asking other CS students in labs, bringing people into the sunlab, and running playtesting elsewhere from your laptop. For the first and second options, we recommend creating a <a href="http://cs.brown.edu/system/software/projects/">/contrib</a> project so that any student can run it from their own account; talk to the TAs for help doing this.</p>
+
+    <ul>
+      <li>Completed engine feature implementation</li>
+      <li>More refined gameplay ("playable")</li>
+      <li>5 public playtesting signatures per group member with notes for each playtester</li>
+    </ul>
+  </section>
+
+  <section id="week4">
+    <h3>Week 4</h3>
+
+    <p>After fixing problems from more in-class playtesting feedback and a first round of public playtesting, you should have plenty of feedback going into the last stretch of development. After polishing your gameplay, you will give a postmortem presentation, discussing five things you believe went well and five things you believe did not go well during the development of your final project.</p>
+
+    <ul>
+      <li>Polished gameplay</li>
+      <li>5 public playtesting signatures per group member with notes for each playtester</li>
+      <li>A 4:3 aspect ratio postmortem presentation, handed in separately under assignment <code>postmortem</code> as a ppt, pptx, or multiple numbered pngs. <strong>The postmortem is due by noon the day of the presentations, 12 hours after the project is due.</strong></li>
+    </ul>
+  </section>
+
+  <section id="week5">
+    <h3>Week 5</h3>
+
+    <p>Your final project is complete! We are requiring that you make a demo video at least one minute long that shows off your game, so you can show it off whenever you want. Since videos will be too large to hand in, you will hand in a file called video.txt containing a link to the original high-quality video file (e.g. vimeo, google docs, public dropbox, but not youtube), along with a final copy of the game, including all code and assets used.</p>
+
+    <ul>
+      <li>Video demo of final project (at least 60 seconds long)</li>
+      <li>Extra polish (optional)</li>
+      <li>Cleaned up code (optional)</li>
+      <li>Documentation (optional)</li>
+    </ul>
+  </section>
+</section>
+
+
+<section>
+  <h2>Advice</h2>
+  <section>
+    <h3>Week 5</h3>
+
+    <p>To record a video on the department, you can run:</p>
+
+    <pre><code>ffmpeg -f x11grab -r 24 -s WxH -i :0.0+X,Y -vcodec libx264 \
+    -vpre lossless_ultrafast -threads 0 video.mkv</code></pre>
+
+    <p>This will record a video that is W by H pixels starting at (X, Y). Department machines will have trouble recording at realtime rates, especially if your recording area is large. You may want to slow your game down (divide your timestep by 4), record in slow motion, then speed up the video 4x afterwards. To speed up a video (96fps / 24fps = 4x), you can run:</p>
+
+    <pre><code>ffmpeg -r 24 -i video.mkv -sameq -r 96 video2.mkv</code></pre>
+  </section>
+</section>
+
+
+<section>
+  <h2>Handing In</h2>
+
+  <p>To hand in checkpoint <var>n</var> (where <var>n</var> is 1, 2, 3, 4, or 5), run <code>cs195u_handin final_week<var>n</var></code> in the directory containing final.pro. For example, the week 1 hand-in script is <code>cs195u_handin final_week1</code>. You will receive a confirmation email if the hand-in is successful.</p>
+  <p>There is one exception: in week 4, you must hand in your postmortem separately by running <code>cs195u_handin postmortem</code>.</p>
+</section>
+<!--#include virtual="../stdfoot.shtml" -->

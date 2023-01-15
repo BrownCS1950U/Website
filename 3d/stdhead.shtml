@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+		<title><!--#if expr="($title != '') && (-n $title)"--><!--#echo var="title"--> - <!--#endif-->CS195U: Topics in 3D Game Engine Development</title>
+		<link rel="stylesheet" href="<!--#echo var='basedir' -->/css/style.css" type="text/css"/>
+        <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700|IM+Fell+French+Canon+SC' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div id="banner">
+			<img id="logo-img" src="<!--#echo var='basedir' -->/css/banner.png"/><br/>			
+			<div id="exclaimwrapper">
+				<script src="<!--#echo var='basedir' -->./js/exclaim.js"></script>
+			</div>
+		</div>
+		<div id="inv">
+			<div id="toprow" class="invrow">
+				<div id="invul"></div>
+				<div id="invu">
+					<ul id="menu">
+						<li class="menu_item<!--#if expr='$tab == News' --> sel<!--#endif-->"><a href="<!--#echo var='basedir' -->/"><img src="<!--#echo var='basedir' -->/images/news.png" height="40"><br/>News <br/>&nbsp;</a></li>
+						<li class="menu_item<!--#if expr='$tab == Lectures' --> sel<!--#endif-->"><a href="<!--#echo var='basedir' -->/lectures.shtml"><img src="<!--#echo var='basedir' -->/images/lectures.png" height="40"><br/>Lectures <br/>&nbsp;</a></li>
+						<li class="menu_item<!--#if expr='$tab == Assignments' --> sel<!--#endif-->"><a href="<!--#echo var='basedir' -->/assignments.shtml"><img src="<!--#echo var='basedir' -->/images/assignments.png" height="40"><br/>Assignments <br/>&nbsp;</a></li>
+						<li class="menu_item<!--#if expr='$tab == Calendar' --> sel<!--#endif-->"><a href="<!--#echo var='basedir' -->/calendar.shtml"><img src="<!--#echo var='basedir' -->/images/calendar.png" height="40"><br/>Calendar <br/>and Hours</a></li>
+						<li class="menu_item<!--#if expr='$tab == Staff' --> sel<!--#endif-->"><a href="<!--#echo var='basedir' -->/staff.shtml"><img src="<!--#echo var='basedir' -->/images/staff.png" height="40"><br/>Staff <br/>&nbsp;</a></li>
+						<li class="menu_item<!--#if expr='$tab == Docs' --> sel<!--#endif-->"><a href="<!--#echo var='basedir' -->/docs.shtml"><img src="<!--#echo var='basedir' -->/images/docs.png" height="40"><br/>Docs and<br/> Resources</a></li>
+					</ul>
+				</div>
+				<div id="invur"></div>
+			</div>
+			<div class="invrow">
+				<div id="invml"></div>
+				<div id="content">

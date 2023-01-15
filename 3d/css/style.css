@@ -1,0 +1,350 @@
+/* Load fonts */
+@font-face {
+    font-family: 'minecraftregular';
+    src: url('minecraft_font-webfont.eot');
+    src: url('minecraft_font-webfont.eot?#iefix') format('embedded-opentype'),
+         url('minecraft_font-webfont.woff') format('woff'),
+         url('minecraft_font-webfont.ttf') format('truetype'),
+         url('minecraft_font-webfont.svg#minecraftregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Hack to fix IE bugs */
+img {
+	border: none;
+}
+
+/* inv grid */
+#inv {
+	display:table;
+	margin:auto;
+}
+
+.invrow {
+	display:table-row;
+}
+
+#inv div.invrow >div {
+	display:table-cell;
+}
+
+#toprow >div {
+	background-position:center bottom;
+}
+
+#invul {
+	display:block;
+	background-image:url(invul.png);
+	background-repeat: no-repeat;
+	height:12px;
+	width:12px;
+}
+
+#invu {
+	background-image:url(invu.png);
+	background-repeat: repeat-x;
+	height:12px;
+}
+
+#invur {
+	background-image:url(invur.png);
+	background-repeat: no-repeat;
+	height:12px;
+	width:12px;
+}
+
+#invml {
+	background-image:url(invl.png);
+	background-repeat: repeat-y;
+	width:12px;
+}
+
+#invmr {
+	background-image:url(invr.png);
+	background-repeat: repeat-y;
+	width:12px;
+}
+
+#invdl {
+	background-image:url(inv.png);
+	background-position: -27px -15px;
+	height:12px;
+	width:12px;
+}
+
+#invd {
+	background-image:url(invd.png);
+	background-repeat: repeat-x;
+	height:12px;
+}
+
+#invdr {
+	background-image:url(inv.png);
+	background-position: -15px -15px;
+	height:12px;
+	width:12px;
+}
+
+/* Page section formatting */
+body {
+	font: normal 16px "Comic Sans MS", cursive, 'PT Serif', Georgia, serif;
+	text-transform:uppercase;
+	text-align:center;
+	color: #000;
+	background-color: #000;
+	background:url(background.png) no-repeat center center fixed;
+	background-size: cover;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: "Comic Sans MS", cursive, fantasy, monospace;
+	text-transform:uppercase;
+	color: #ffff00;
+	text-shadow: .15em .15em #3f3f00;
+}
+
+#content a {
+	font-weight: bold;
+	color: #008;
+	text-decoration: none;
+}
+
+#content a:hover {
+	text-decoration: underline;
+}
+
+#content a:visited {
+	color: #3f3f00;
+}
+
+#content a:active {
+	color: #ff0;
+	text-decoration: underline;
+}
+
+#content {
+	background:url('inv_bg.png') repeat;
+	width: 53em;
+	padding:1em 2em 1em 2em;
+	text-align:left;
+}
+
+#banner {
+	margin: 5em 0 0em 0;
+}
+
+#logo-img {
+	width:70em;
+	vertical-align:middle;
+}
+
+.active {
+	background:#dff4f2;
+}
+
+.post_header {
+	padding:0.5em 0em;
+	text-align:left;
+}
+
+.post_header > h2 {
+	padding:0em;
+	margin:0em;
+}
+
+.post_header > h3 {
+	font: italic 14px "Comic Sans MS", cursive, 'PT Serif', serif;
+	padding:0em;
+	margin:0em;
+	text-shadow: .1em .1em #3f3f00;
+}
+
+code {
+	font-family: Consolas, Inconsolata, 'Courier New', monospace;
+}
+
+/* Styling to make the menubar work */
+#menu {
+	margin:0;
+	padding:0em;
+	list-style-type:none;
+	overflow:hidden;
+	font: 20px 'Papyrus', cursive;
+	font-size: 75%;
+}
+
+.menu_item {
+	border: solid black;
+	border-width:18px 12px 12px 12px;
+	background:url(tabunsel_bg.png) repeat;
+	background-clip:padding-box;
+	-webkit-border-image: url(tabunsel.png) 18 12 12 12 repeat;
+	-moz-border-image: url(tabunsel.png) 18 12 12 12 repeat;
+	-o-border-image: url(tabunsel.png) 18 12 12 12 repeat;
+	padding:0px 6px 0px 6px;
+	display:inline-block;
+	font-weight: bold;
+	vertical-align:middle;
+	text-align:center;	
+	text-decoration:underline;
+}
+
+.sel {
+	-webkit-border-image: url(tabsel.png) 18 12 12 12 repeat;
+	-moz-border-image: url(tabsel.png) 18 12 12 12 repeat;
+	-o-border-image: url(tabsel.png) 18 12 12 12 repeat;
+	background:url(tabsel_bg.png) repeat;
+	background-clip:padding-box;
+}
+
+.menu_item a {
+	color:inherit;
+	display:block;
+	text-decoration:none;
+}
+
+.menu_item a:hover, .menu_item a:active {
+	color:#fff;
+}
+
+/* Styling for the "table" of staff images */
+#staffTable {
+	display: table;
+	width: 98%;
+	overflow: hidden;
+}
+
+div.imageRow {
+	display: table-row;
+}
+
+div.staffImage {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	padding-bottom: 18px;
+}
+
+/* Styling for actual tables (like office hours) */
+table, th, td {
+    border-spacing:0 0;
+}
+
+table {
+	width:100%;
+	margin:auto;
+	border-collapse: separate;
+}
+
+th {
+	padding:0.7em;
+	font-size:1.1em;
+}
+
+td {
+	padding:0.5em;
+	border-spacing:0em;
+}
+
+td.label {
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+}
+
+th, td, .invitem {
+	border: 3px solid black;
+	background:url(cell_bg.png) repeat;
+	-webkit-border-image: url(cell.png) 3 3 3 3 repeat;
+	-moz-border-image: url(cell.png) 3 3 3 3 repeat;
+	-o-border-image: url(cell.png) 3 3 3 3 repeat;
+}
+
+table.inventory {
+	empty-cells: show;
+}
+
+table.inventory td {
+	padding: 0.5em;
+        margin: -0.5em;
+}
+
+table.inventory td a {
+	border-width: 0;
+	display: block;
+	padding: 0.5em;
+	margin: -0.5em;
+}
+
+table.inventory td a:hover {
+	background-color:#999;
+}
+
+table.inventory td a:active {
+	background-color:#999;
+}
+
+/* Exclaim text */
+
+#exclaimwrapper {
+	height:5em;
+}
+
+#exclaim {
+	font-family: 'Jokerman', 'Papyrus', 'Courier New', monospace;
+	font-weight: bold;
+	color: #ffff00;
+	text-shadow: .15em .15em #3f3f00;
+	display: inline-block;
+	pointer-events: none;
+	-webkit-animation-name: exclaimanim-webkit;
+	-webkit-animation-duration: .5s;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: normal;
+	-webkit-animation-play-state: running;
+	-moz-animation-name: exclaimanim-moz;
+	-moz-animation-duration: .5s;
+	-moz-animation-delay: 0s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: normal;
+	-moz-animation-play-state: running;
+	-o-animation-name: exclaimanim-o;
+	-o-animation-duration: .5s;
+	-o-animation-delay: 0s;
+	-o-animation-iteration-count: infinite;
+	-o-animation-direction: normal;
+	-o-animation-play-state: running;
+	animation-name: exclaimanim;
+	animation-duration: .5s;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-play-state: running;
+}
+
+@-webkit-keyframes exclaimanim-webkit {
+0%    {-webkit-transform: translate(400px, -60px) rotate(-20deg) scale(1);-webkit-animation-timing-function: ease-in}
+50%   {-webkit-transform: translate(400px, -60px) rotate(-20deg) scale(1.05);-webkit-animation-timing-function: ease-out}
+100%  {-webkit-transform: translate(400px, -60px) rotate(-20deg) scale(1);-webkit-animation-timing-function: ease-in}
+}
+
+@-moz-keyframes exclaimanim-moz {
+0%    {-moz-transform: translate(400px, -60px) rotate(-20deg) scale(1);-moz-animation-timing-function: ease-in}
+50%   {-moz-transform: translate(400px, -60px) rotate(-20deg) scale(1.05);-moz-animation-timing-function: ease-out}
+100%  {-moz-transform: translate(400px, -60px) rotate(-20deg) scale(1);-moz-animation-timing-function: ease-in}
+}
+
+@-o-keyframes exclaimanim-o {
+0%    {-o-transform: translate(400px, -60px) rotate(-20deg) scale(1);-o-animation-timing-function: ease-in}
+50%   {-o-transform: translate(400px, -60px) rotate(-20deg) scale(1.05);-o-animation-timing-function: ease-out}
+100%  {-o-transform: translate(400px, -60px) rotate(-20deg) scale(1);-o-animation-timing-function: ease-in}
+}
+
+@keyframes exclaimanim {
+0%    {transform: translate(400px, -60px) rotate(-20deg) scale(1);animation-timing-function: ease-in}
+50%   {transform: translate(400px, -60px) rotate(-20deg) scale(1.05);animation-timing-function: ease-out}
+100%  {transform: translate(400px, -60px) rotate(-20deg) scale(1);animation-timing-function: ease-in}
+}
+

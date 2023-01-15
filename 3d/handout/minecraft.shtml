@@ -1,0 +1,145 @@
+<!--#set var="title" value="Project 1: Minecraft" -->
+<!--#set var="tab" value="Assignments" -->
+<!--#set var="basedir" value=".." -->
+<!--#include virtual="../stdhead.shtml" -->
+<header>
+  <h1>Project 1: Minecraft</h1>
+</header>
+
+
+<section>
+  <h2>Introduction</h2>
+
+  <p>In this assignment you will build your own version of one of the most popular indie games ever: Minecraft. If you are not familiar with Minecraft, you can check out the classic version for free at <a href="http://www.minecraft.net/classic/play">http://www.minecraft.net/classic/play</a> (requires Java). The game is based on a practically infinite block world in which players may mine (remove) almost any block. Players may also place mined blocks back into the world at any unoccupied location. During the daytime the world is peaceful, but at night mobs of enemies appear and attack the player.</p>
+
+  <p>The reason we are studying Minecraft is not because of its popularity, but instead because its underlying engine can be implemented in a matter of weeks. By the end of the assignment, you will have a fully playable Minecraft clone, complete with mining blocks, an infinite world, and simple enemies.</p>
+
+  <p>Demos of each checkpoint are available by running <code>cs195u_demo minecraft{1,2,3}</code>. </p>
+</section>
+
+
+<section>
+  <h2>Support Files</h2>
+
+  <p>The support code for this assignment is located at <code>/course/cs195u/asgn/minecraft</code>. The code is the same as what you received for Warmup. However, we suggest you reuse your own code from Warmup to implement your camera and texture loading.</p>
+
+  <p>Along with the support code, the assignment folder contains a single 256x256 image named <code>terrain.png</code>. This is the texture atlas, a grid of 16x16 textures. You will use this image to texture all the blocks in your game world. There are a number of different versions of this atlas online; feel free to use a different atlas if you'd like.</p>
+</section>
+
+
+<section>
+  <h2>Requirements</h2>
+
+  <p>Minecraft is a large assignment made up of many components. In order to help everyone prioritize and stay on track to complete the assignment, we are breaking the assignment up into weekly checkpoints. Each checkpoint has a set of requirements that must be completed by that point. <em>We will grade each checkpoint separately; you cannot skip a checkpoint!</em></p>
+
+  <section id="week1">
+    <h3>Week 1</h3>
+
+    <p>At the end of week one, you will have complete representation of a world composed of blocks. Requirements:</p>
+
+  <ul>
+    <li>A world composed of 1x1x1 blocks grouped into 32x32x32 block "chunks".
+    <ul>
+      <li>You must not hard code the size of a "chunk". You must be able to change the size of a chunk by changing a single constant. Feel free to hard code the size of a block as 1x1x1.</li>
+    </ul>
+    </li>
+    <li>Must render only block faces that are adjacent to empty blocks, including across chunk boundaries.</li>
+    <li>Every block face must be textured from a texture atlas. You must use at least two distinct textures from a single atlas.</li>
+    <li>A camera that can be moved with a keyboard and rotated with a mouse.</li>
+    <li>Runs smoothly (20+ FPS) on department machines rendering a 2x2x2 grid of chunks. Don't worry, this is a low requirement, so you shouldn't need to optimize to reach it.</li>
+    <li>Some form of randomized terrain. We are not requiring that do anything fancy (i.e. simply using <code>sin()</code> or <code>rand()</code> is acceptable), but we suggest you try using Perlin or simplex noise. If you do want to try Perlin noise, we recommend you start with the pseudocode in this article: <a href="http://freespace.virgin.net/hugo.elias/models/m_perlin.htm">http://freespace.virgin.net/hugo.elias/models/m_perlin.htm</a>.</li>
+  </ul>
+  </section>
+
+  <section id="week2">
+    <h3>Week 2</h3>
+
+    <p>At the end of week two, you will be able to move a player around the world and collide with the terrain. Requirements:</p>
+
+    <ul>
+      <li>First-person player movement using mouse and keyboard (control requirements same as those in Warmup).</li>
+      <li>Bug-free collision detection and response of the player against the world.</li>
+      <ul>
+        <li>Collision response must be implemented so the player slides, as explained in lecture.</li>
+	<li>Player must be more than 1 block tall. A good player height is 1.5 blocks tall.
+      </ul>
+      <li>View frustum culling.</li>
+      <li>Per-chunk vertex buffers for drawing.</li>
+      <li>Runs smoothly (20+ FPS) on department with a 10x2x10 grid of chunks.</li>
+      <ul>
+        <li>With view frustum culling and vertex buffers enabled, this should be easy to meet.</li>
+      </ul>
+    </ul>
+  </section>
+
+  <section id="week3">
+    <h3>Week 3</h3>
+
+At the end of week three, the player will be able to remove and add blocks, enemies will occasionally spawn and attack the player, and the world will extend infinitely in every direction. You do not need to save player modifications to chunks when they are no longer resident in memory. Requirements:
+
+    <ul>
+      <li>Player is able to add and remove blocks based on ray-grid intersection.</li>
+      <ul>
+        <li>Ray starts at the camera eye and extends along the camera look vector.</li>
+        <li>Must render all visible surfaces at all times (no "holes" in the terrain). When the player adds or removes a block, all chunks neighboring this block need to be updated.</li>
+        <li>Visually highlighting the nearest intersected face is optional (this is shown as a black outline in the demo).</li>
+      </ul>
+      <li>Continuous streaming of chunks to render only chunks close to the player.</li>
+      <ul>
+        <li>The criteria for having a chunk in memory must be based on the distance from the chunk to the player. Chunks above a distance threshold must not be resident in memory. You must load chunks in a radius of at least 3 blocks in every direction of the player.</li>
+      </ul>
+      <li>Runs smoothly (20+ FPS) on department machines when keeping 200 chunks in memory.</li>
+      <ul>
+        <li>To achieve this, you will likely need to spread out the initialization of newly-visible chunks across multiple frames. See the week 3 advice for more details.</li>
+      </ul>
+      <li>Simplistic enemies</li>
+      <ul>
+        <li>May spawn either at the start of the game or randomly throughout the game.</li>
+        <li>Must collide and interact with the player and the world.</li>
+        <li>No AI required, can walk / hop around randomly but cannot be completely stationary.</li>
+      </ul>
+    </ul>
+  </section>
+</section>
+
+
+<section>
+  <h2>Advice</h2>
+
+  <section>
+    <h3>Week 1</h3>
+
+    <ul>
+      <li>Remember that non-repeating <code>GL_TEXTURE_2D</code> textures use coordinates in the range [0, 1] to cover the entire image. You will want to use the <code>GL_NEAREST</code> texture filter for both minification and magnification to prevent neighboring textures leaking into the current texture from the texture atlas.</li>
+      <li>Though you can use a fixed number of chunks this week, you will need to do chunk-streaming in week 3. We recommend you use a data structure that allows you to easily index into chunks and add & remove chunks. If you want to use a hash table, Qt includes a QHash data structure. You can hash two numbers using <code>qHash(QPair&lt;int,&nbsp;int&gt;(num1,&nbsp;num2))</code></li>
+      <li>Be careful about handling chunk boundaries, especially for chunks at the edge of the world.</li>
+      If you write a draw method for a generic quad in 3D space, drawing blocks will be much less tedious.
+    </ul>
+  </section>
+
+  <section>
+    <h3>Week 2</h3>
+    <ul>
+      <!-- TODO: we recommend using QGLBuffer because it's less boilerplate and more OO and easier? -->
+      <!-- TODO: we recommend avoiding GLEW because of LD_LIBRARY_PATH? -->
+      <li>In lecture 3 we describe how to use raw OpenGL VBOs (Vertex Buffer Objects) to speed up rendering, which is required for this week. However, this uses some newer OpenGL calls that may not be automatically available on your system (especially if that system is Windows). If this is the case, you should consider using a <a href="http://doc.trolltech.com/latest/qglbuffer.html">QGLBuffer</a> which is a thin cross-platform wrapper around VBOs. </li>
+      <li>You will need to multiply the projection matrix by the modelview matrix for view frustum culling. This can be done as a temporary computation using the current OpenGL matrix surrounded by a push and pop. Start with the identity matrix, call <code>gluPerspective()</code>, apply your camera, and read the result with <code>glGetFloatv()</code>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Week 3</h3>
+    <ul>
+      <li>When you add or remove a block from a chunk, you will need to rebuild the vertex buffer for that chunk. If you modify a block on a chunk boundary, you may need to rebuild neighboring chunks' vertex buffers.</li>
+      <li>If streaming in a large number of chunks in one frame is slow, you should split the work across multiple frames. A simple way of doing this is to hold onto a list of chunks that need to be streamed in, and process only the first <var>n</var> of these chunks in one frame.</li>
+    </ul>
+  </section>
+</section>
+
+
+<section>
+  <h2>Handing In</h2>
+
+  <p>To hand in checkpoint <var>n</var> (where <var>n</var> is 1, 2, or 3), run <code>cs195u_handin minecraft_week<var>n</var></code> in the directory containing your <code>.pro</code> file. For example, to hand in week 1 you would run <code>cs195u_handin minecraft_week1</code>. You will receive a confirmation email when a hand-in is successful.</p>
+</section>
+<!--#include virtual="../stdfoot.shtml" -->
