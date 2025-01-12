@@ -43,7 +43,7 @@ const App = () => {
         audioRef.pause();
         setAudioEnabled(false);
       } catch (error) {
-        console.error("Audio pause failed", error);
+        console.error("Audio pause failed!", error);
       }
     }
   };
