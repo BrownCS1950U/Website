@@ -27,6 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm install --legacy-peer-deps
+      - run: npm ls
       - run: npm run build
 
       - name: Deploy with gh-pages
