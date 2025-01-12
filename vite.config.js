@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  base: '/CS1950U/',
+  base: '/Website/',
   build: {
     rollupOptions: {
       output: {
