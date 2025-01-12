@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.28.1",
     "stats.js": "^0.17.0",
+    "three": "^0.172.0",
     "three-nebula": "^10.0.3"
   },
   "devDependencies": {
