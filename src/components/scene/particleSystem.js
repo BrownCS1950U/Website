@@ -30,7 +30,7 @@ const r = ratio * Math.sqrt(THREE.MathUtils.randFloat(0, 1));
 const theta = THREE.MathUtils.randFloat(0, 1) * 2 * Math.PI;
 
 const x = this.shape.position.x + r * Math.cos(theta);
-const y = this.shape.position.y + randHeight * -1;   // if you want negative
+const y = this.shape.position.y + randHeight * -1;
 const z = this.shape.position.z + r * Math.sin(theta);
 
 return new THREE.Vector3(x, y, z);
