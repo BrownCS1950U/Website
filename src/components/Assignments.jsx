@@ -14,20 +14,20 @@ const Assignments = ({onChange, onSky, onHome}) => {
   >
 
       <div className=" mx-[20%] relative overflow-y-auto no-scrollbar h-full z-10">
-      <section className="mt-[10%] mb-[10%] flex flex-col gap-2 no-scrollbar z-20">
+      <section className="mt-[10%] mb-[10%] flex flex-col no-scrollbar z-20">
 
-      <div>
+      <div className="mb-5">
         <h2 className={styles.titleHeadText}>Assignments</h2>
       </div>
 
       <p>All assignments (except for the final) are due at 3pm of the day listed and will be checked for completion in person. </p>
       <br></br>
       <p>The link to sign up for times is here.
-      The final is due on Friday, May 11 at 9am where you present your work to the class.</p>
+      The final is due on Friday, May 6 at 9am.</p>
       <br></br>
-      <p> The stencil code template can be found here.. </p>
+      <p> The stencil code template can be found <a target="_blank" rel="noopener noreferrer" className="underline text-[#00ccff]" href="https://classroom.github.com/a/2rC8PxkO"> Here</a> </p>
 
-      <div className='flex flex-wrap gap-10'>
+      <div className='mt-5 flex flex-wrap gap-5'>
         <Table data={projects} projects={true}/>
       </div>
       </section>

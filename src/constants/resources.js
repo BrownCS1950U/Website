@@ -2,9 +2,9 @@ export const sections = [
     {
       title: "Forms",
       links: [
-        { href: "https://forms.gle/NCN64bBJXG5Ycs3x8", label: "Collaboration Policy Form" },
+        { href: "https://forms.gle/srYNPvRaBaquZ2pR9", label: "Collaboration Policy Form" },
         { href: "https://forms.gle/NCN64bBJXG5Ycs3x8", label: "Anonymous Feedback Form" },
-        { href: "https://forms.gle/3fsDhv2ne7WR6CKF9", label: "Lab Feedback Form" },
+        { href: "https://forms.gle/zV5vphiDysmAMHnx8", label: "Lab Feedback Form" },
       ],
     },
     {
@@ -12,6 +12,7 @@ export const sections = [
       links: [
         { href: "https://hackmd.io/gGOpcqoeTx-BOvLXQWRgQg", label: "GitHub Guide" },
         { href: "https://hackmd.io/@BrownDeepLearningS24/BkIT3sW6s", label: "Google Colaboratory Tutorial" },
+        { href: "https://google.github.io/styleguide/cppguide.html", label: "Google C++ Style Guide"},
       ],
     },
     {

@@ -2,26 +2,26 @@ export const navLinks = [
   {
     id: "home",
     title: "Home",
-    path: "/",
+    path: "/Website/",
   },
   {
     id: "classes",
     title: "Classes",
-    path: "/classes",
+    path: "/Website/",
   },
   {
     id: "assignments",
     title: "Assignments",
-    path: "/assignments",
+    path: "/Website/",
   },
   {
     id: "labs",
     title: "Labs",
-    path: "/labs",
+    path: "/Website/",
   },
   {
     id: "resources",
     title: "Resources",
-    path: "/resources",
+    path: "/Website/",
   },
 ];

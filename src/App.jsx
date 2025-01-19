@@ -1,7 +1,5 @@
-import { BrowserRouter } from "react-router-dom";
 import { About, Hero, Classes, Assignments, Resources, Labs, Navbar } from "./components";
 import { useEffect, useState } from "react";
-
 
 const App = () => {
   const [scrollValue, setScrollValue] = useState(-1);
@@ -72,7 +70,7 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
+    <div>
       <div className="relative z-0 bg-primary">
         <Navbar onOverlaySelect={handleShowOverlay} setAudio={handleAudio} audio={audioEnabled}/>
         <div className="relative h-screen">
@@ -84,7 +82,7 @@ const App = () => {
             {currentOverlay === "Resources" && <Resources onChange={handleShowTitle} onSky={handleOnSky} onHome={handleOnHome}/>}
             {currentOverlay === "Labs" && <Labs onChange={handleShowTitle} onSky={handleOnSky} onHome={handleOnHome}/>}
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 

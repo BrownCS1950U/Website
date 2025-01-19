@@ -1,17 +1,23 @@
 import React, { useRef, useEffect } from "react";
 import { initializeScene } from "./scene/main";
 import { styles } from "../styles";
-import gsap from "gsap";
 
 const SplineScene = ({ transition, onSky, onHome, value }) => {
   const mountRef = useRef(null);
   const cameraRef = useRef(null);
   const lightRef = useRef(null);
+
+  const animationRef = useRef(null);
+  const easeInOutQuad = (t) => {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  };
+
   useEffect(() => {
     const cleanup = initializeScene(mountRef, cameraRef, lightRef);
 
     return () => {
       if (cleanup) cleanup();
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
   }, []);
 
@@ -20,23 +26,48 @@ const SplineScene = ({ transition, onSky, onHome, value }) => {
       const targetPosition = onSky
         ? { x: 0.3, y: 2, z: 4 }
         : { x: 2.8, y: 0.9, z: 1.5 };
-      let targetRotation = onSky ? { x: -0.2, y: 0.05, z: 0 } : { x: 0, y: 1.078, z: 0 };
+      let targetRotation = onSky
+        ? { x: -0.2, y: 0.05, z: 0 }
+        : { x: 0, y: 1.078, z: 0 };
       targetRotation.x = onHome ? targetRotation.x : 0.42;
-      
-      gsap.to(cameraRef.current.position, {
-        x: targetPosition.x,
-        y: targetPosition.y,
-        z: targetPosition.z,
-        duration: 1,
-      });
-      gsap.to(cameraRef.current.rotation, {
-        x: targetRotation.x,
-        y: targetRotation.y,
-        z: targetRotation.z,
-        duration: 1,
-      });
+
+      const duration = 1000;
+      const startTime = performance.now();
+
+      const initialPosition = { 
+        x: cameraRef.current.position.x, 
+        y: cameraRef.current.position.y, 
+        z: cameraRef.current.position.z 
+      };
+      const initialRotation = { 
+        x: cameraRef.current.rotation.x, 
+        y: cameraRef.current.rotation.y, 
+        z: cameraRef.current.rotation.z 
+      };
+
+      const animate = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        let progress = Math.min(elapsed / duration, 1);
+
+        const easedProgress = easeInOutQuad(progress);
+
+        cameraRef.current.position.x = initialPosition.x + (targetPosition.x - initialPosition.x) * easedProgress;
+        cameraRef.current.position.y = initialPosition.y + (targetPosition.y - initialPosition.y) * easedProgress;
+        cameraRef.current.position.z = initialPosition.z + (targetPosition.z - initialPosition.z) * easedProgress;
+
+        cameraRef.current.rotation.x = initialRotation.x + (targetRotation.x - initialRotation.x) * easedProgress;
+        cameraRef.current.rotation.y = initialRotation.y + (targetRotation.y - initialRotation.y) * easedProgress;
+        cameraRef.current.rotation.z = initialRotation.z + (targetRotation.z - initialRotation.z) * easedProgress;
+
+        if (progress < 1) {
+          animationRef.current = requestAnimationFrame(animate);
+        }
+      };
+
+
+      animationRef.current = requestAnimationFrame(animate);
     }
-  }, [onSky]);
+  }, [onSky, onHome]);
 
   return (
     <div className="h-screen w-full mx-auto relative">

@@ -5,7 +5,7 @@ const About = ({showAbout, onSky, onHome}) => {
   onHome(true);
   return (
     <div
-          className={` absolute top-0 left-0 w-1/2 h-screen z-0 no-scrollbar transition-transform duration-400 ${
+          className={` absolute top-0 left-0 w-1/2 h-screen z-1 no-scrollbar transition-transform duration-400 ${
             showAbout ? "transform translate-x-0" : "transform -translate-x-full"
           }`}
         >
@@ -37,6 +37,7 @@ const About = ({showAbout, onSky, onHome}) => {
           so make sure to bring your laptops to class!
           </p>
         </div>
+        
         <div className="flex flex-row justify-between md:flex-shrink-0 md:flex-col">
           <div className="flex flex-1 flex-col gap-1">
             <div className="flex flex-col">
@@ -58,11 +59,15 @@ const About = ({showAbout, onSky, onHome}) => {
           </div>
           <hr className="my-2 border-t-2 border-[#00ccff]" />
           <div className="flex flex-1 flex-col gap-1">
-            <a target="_blank" rel="noopener noreferrer" className="underline" href="https://docs.google.com/presentation/d/1AkrQ-4Rsb-Cc9E9EfWytdsBTO4EtJvfCYi-nU8zFxzI">Syllabus</a>
-            <a target="_blank" rel="noopener noreferrer" className="underline" href="https://app.slack.com/client/E04BPDFQBHC/C084F4A4X52?_gl=1*nih4zg*_gcl_au*MTQyNTc0MTg4My4xNzMyNTg1NzMy">Slack</a>
+            <a target="_blank" rel="noopener noreferrer" className="underline" href="https://docs.google.com/document/d/1KhLl0Mn_lbT0RRP9Wl5N4IUS85fMoUC0QG67S4wkZ5k/edit?usp=sharing">Syllabus</a>
+            <a target="_blank" rel="noopener noreferrer" className="underline" href="https://join.slack.com/share/enQtODMzOTY0MTgyOTI2NC1jNzAxODI4MGM3OWI0ODc0MzY4MGIxOTgxODJjZDMxNDRmMzZlOGRmYjk0NTQ4ZjhhOWI5OGVkZDQzZmJiZDE4?_gl=1*141lihu*_gcl_au*MTQyNTc0MTg4My4xNzMyNTg1NzMy">Slack</a>
           </div>
         </div>
       </div>
+      <h2 className="text-3xl font-semibold md:text-5xl text-[#ffffff]">
+      PAX East Form <a target="_blank" rel="noopener noreferrer" className="underline text-[#00ccff]" href="https://forms.gle/385PucHrZUDPL1kk6">HERE</a>
+      </h2>
+      
       <h4 className="text-3xl font-semibold md:text-3xl text-[#00ccff]">Hours</h4>
      
       <div 

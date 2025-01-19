@@ -18,7 +18,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
             <>
               <th className={`text-left ${commonClasses}`}>Topic</th>
               <th className={`px-5 text-right ${commonClasses}`}>Date</th>
-              <th className={`text-right ${commonClasses}`}>Slides</th>
+              <th className={`text-right ${commonClasses}`}>Handout</th>
               <th className={`text-right ${commonClasses}`}>Submission</th>
             </>
           ) : (
@@ -27,9 +27,6 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
               <th className={`px-5 text-right ${commonClasses}`}>Date</th>
               <th className={`text-right ${commonClasses}`}>Google Slides</th>
               <th className={`text-right ${commonClasses}`}>Code Demos</th>
-              <th className={`text-right ${commonClasses}`}>
-                {lectures ? "Submission" : "Worksheets"}
-              </th>
             </>
           )}
         </tr>
@@ -65,13 +62,14 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                 <td className="text-right">
                   {item.slides ? (
                     <a
+                      
                       className="hover-glow focus:underline"
                       target="_blank"
                       rel="noopener noreferrer"
                       href={item.slides}
                       style={{ color: "#00CCFF", fontWeight: "bold" }}
                     >
-                      Slides
+                      Handout
                     </a>
                   ) : (
                     "-"
@@ -144,21 +142,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                     )}
                   </td>
                 ) : (
-                  <td className="text-right">
-                    {item.submission_folder ? (
-                      <a
-                        className="hover-glow focus:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={item.submission_folder}
-                        style={{ color: "#00CCFF", fontWeight: "bold" }}
-                      >
-                        Submission
-                      </a>
-                    ) : (
-                      "-"
-                    )}
-                  </td>
+                  <></>
                 )}
               </>
             )}

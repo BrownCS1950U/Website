@@ -1,4 +1,13 @@
-import * as THREE from "../../../node_modules/three/build/three.module.js";
+import {
+  Vector3,
+  PlaneGeometry,
+  Mesh,
+  Color,
+  TextureLoader,
+  Sprite,
+  SpriteMaterial,
+  MathUtils,
+} from "../../../node_modules/three/build/three.module.js"
 import { Noise } from 'noisejs';
 
 var noise = new Noise();
@@ -24,16 +33,16 @@ export class ParticleEmitter {
     }
 
     getRandomPoint() {
-        const randHeight = THREE.MathUtils.randFloat(0, this.shape.geometry.parameters.height);
+        const randHeight = MathUtils.randFloat(0, this.shape.geometry.parameters.height);
 const ratio = (this.shape.geometry.parameters.radius / this.shape.geometry.parameters.height) * randHeight;
-const r = ratio * Math.sqrt(THREE.MathUtils.randFloat(0, 1));
-const theta = THREE.MathUtils.randFloat(0, 1) * 2 * Math.PI;
+const r = ratio * Math.sqrt(MathUtils.randFloat(0, 1));
+const theta = MathUtils.randFloat(0, 1) * 2 * Math.PI;
 
 const x = this.shape.position.x + r * Math.cos(theta);
 const y = this.shape.position.y + randHeight * -1;
 const z = this.shape.position.z + r * Math.sin(theta);
 
-return new THREE.Vector3(x, y, z);
+return new Vector3(x, y, z);
     }
 };
 
@@ -100,31 +109,31 @@ class ParticleNoise {
 
 export class ParticleProps3D {
     constructor() {
-        this.position = new THREE.Vector3(1, 0, 1);
-        this.rotation = new THREE.Vector3(0, 0, 0);
-        this.colorA = new THREE.Color();
-        this.colorB = new THREE.Color();
+        this.position = new Vector3(1, 0, 1);
+        this.rotation = new Vector3(0, 0, 0);
+        this.colorA = new Color();
+        this.colorB = new Color();
         this.size = 16;
         this.birthRate = 50;
         this.lifeTime = 1.0;
         this.alphaFade = null;
         this.sizeFade = null;
-        this.velocity = new THREE.Vector3(0, 0, 0);
+        this.velocity = new Vector3(0, 0, 0);
         this.particleEmitter = new ParticleEmitter(
-            new THREE.Mesh(new THREE.PlaneGeometry(1, 1)),  
-            new THREE.Vector3(1, 1, 1)
+            new Mesh(new PlaneGeometry(1, 1)),  
+            new Vector3(1, 1, 1)
         );
 
-        this.particleForce = new THREE.Vector3(0, 0, 0);
+        this.particleForce = new Vector3(0, 0, 0);
         this.particleNoise = new ParticleNoise(null, 1, 1, 1, 0, 0);
 
-        this.velocityVariation = new THREE.Vector3(0, 0, 0);
+        this.velocityVariation = new Vector3(0, 0, 0);
         this.sizeVariation = 0.5;
         
-        this.image = new THREE.Sprite(
-            new THREE.SpriteMaterial(
+        this.image = new Sprite(
+            new SpriteMaterial(
                 {
-                    map: new THREE.TextureLoader().load('pt_dust.png'),
+                    map: new TextureLoader().load('pt_dust.png'),
                     color: 0xffffff,
                 }
             )
@@ -138,17 +147,17 @@ class Particle3D {
       this.age = 0;
       this.lifeTime = 1.0;
   
-      this.velocity = new THREE.Vector3();
-      this.force = new THREE.Vector3();
+      this.velocity = new Vector3();
+      this.force = new Vector3();
       this.noise = null;
   
-      this.colorA = new THREE.Color();
-      this.colorB = new THREE.Color();
+      this.colorA = new Color();
+      this.colorB = new Color();
   
       this.size = 1;
       this.alphaFade = null;
       this.sizeFade = null;
-      this.rotationSpeed = new THREE.Vector3();
+      this.rotationSpeed = new Vector3();
       this.mesh = null; 
     }
   }
@@ -194,7 +203,7 @@ export class ParticleSystem {
         particle.sizeFade = props3D.sizeFade; 
         particle.rotationSpeed.copy(props3D.rotation);
 
-        particle.mesh = new THREE.Sprite(props3D.image.material.clone());
+        particle.mesh = new Sprite(props3D.image.material.clone());
         particle.mesh.position.copy(props3D.particleEmitter.getRandomPoint());
         particle.mesh.material.color.copy(particle.colorA);
         particle.mesh.material.opacity = 1.0;
@@ -231,7 +240,7 @@ export class ParticleSystem {
             p.mesh.position.z * p.noise.scale
             );
 
-            const curlVec = new THREE.Vector3(curlVecArr[0], curlVecArr[1], curlVecArr[2]);
+            const curlVec = new Vector3(curlVecArr[0], curlVecArr[1], curlVecArr[2]);
             curlVec.multiplyScalar(p.noise.randomnessScale * variationFactor);
             p.velocity.addScaledVector(curlVec, delta / massFactor);
             p.mesh.material.rotation += p.noise.randomnessRotation * delta * variationFactor;

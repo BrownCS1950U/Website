@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { menu, close } from "../assets";
@@ -29,8 +28,7 @@ const Navbar = ({onOverlaySelect, setAudio, audio}) => {
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-        <Link
-          to='/'
+        <div
           className='flex items-center gap-2'
           onClick={() => {
             setActive("");
@@ -41,7 +39,7 @@ const Navbar = ({onOverlaySelect, setAudio, audio}) => {
             CS1950U&nbsp;
             <span className='sm:block hidden'> &nbsp; | &nbsp; 3D Game Engines</span>
           </p>
-        </Link>
+        </div>
         <svg 
   xmlns="http://www.w3.org/2000/svg" 
   width="30" 
@@ -76,7 +74,7 @@ const Navbar = ({onOverlaySelect, setAudio, audio}) => {
                 }
               }
             >
-              <Link to={nav.path}>{nav.title}</Link>
+              <div>{nav.title}</div>
             </li>
           ))}
         </ul>
@@ -107,7 +105,7 @@ const Navbar = ({onOverlaySelect, setAudio, audio}) => {
                     onOverlaySelect(nav.title);
                   }}
                 >
-                  <Link to={nav.path}>{nav.title}</Link>
+                  <div>{nav.title}</div>
                 </li>
               ))}
             </ul>
