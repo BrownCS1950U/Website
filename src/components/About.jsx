@@ -134,7 +134,7 @@ const About = ({showAbout, onSky, onHome}) => {
                 <div className="text-md font-medium">Feiyue Zhang</div>
                 <div className="text-sm font-semibold text-slate-600">fzhang50 • he/him</div>
                 <div className="mt-2 text-sm italic text-white">
-                 TODO
+                 Games are fun.
                 </div>
               </div>
             </div>
