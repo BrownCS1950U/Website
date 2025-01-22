@@ -19,7 +19,6 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
               <th className={`text-left ${commonClasses}`}>Topic</th>
               <th className={`px-5 text-right ${commonClasses}`}>Date</th>
               <th className={`text-right ${commonClasses}`}>Handout</th>
-              <th className={`text-right ${commonClasses}`}>Submission</th>
             </>
           ) : (
             <>
@@ -75,7 +74,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                     "-"
                   )}
                 </td>
-                <td className="text-right">
+                {/* <td className="text-right">
                   {item.submission_folder ? (
                     <a
                       className="hover-glow focus:underline"
@@ -89,7 +88,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                   ) : (
                     "-"
                   )}
-                </td>
+                </td> */}
               </>
             ) : (
               <>
