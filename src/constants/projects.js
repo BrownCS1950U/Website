@@ -9,7 +9,7 @@ export const projects = [
       project: "Warmup 1",
       checkpoint: "Basic Engine Architecture",
       dateDue: "2/5",
-      link: "",
+      link: "https://docs.google.com/document/d/14z_KJh87Rv_pmPh8eW8JmPuKNdt_j1EO/edit?usp=sharing&ouid=104255555572779394170&rtpof=true&sd=true",
     },
     {
       project: "Warmup 2",
