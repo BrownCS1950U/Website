@@ -10,7 +10,7 @@ export const lectures = [
     date: "1/29",
     class: "2",
     topic: "Applications and Screens",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1ArSOI6GoevVd7yDJ6t4wy14rhHGeHjbE/edit?usp=drive_link&ouid=104255555572779394170&rtpof=true&sd=true",
     codeDemos: "",
   },
   {
