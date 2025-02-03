@@ -7,7 +7,7 @@ export const labs = [
   {
     topic: "Lab 2",
     // topic: "Inputs",
-    // date: "2/5",
+    date: "2/5",
     slides: ""
   },
   {
