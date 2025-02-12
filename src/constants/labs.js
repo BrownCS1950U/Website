@@ -7,8 +7,8 @@ export const labs = [
   {
     topic: "Lab 2",
     // topic: "Inputs",
-    date: "2/5",
-    slides: ""
+    date: "2/8",
+    slides: "https://classroom.github.com/a/wazy7EjD"
   },
   {
     topic: "Lab 3",

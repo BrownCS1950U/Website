@@ -17,14 +17,14 @@ export const lectures = [
     date: "2/5",
     class: "3",
     topic: "Game Worlds, Entity Component System, Collisions Intro",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1wCG1-e4uG0IxOFUEZKWBT7Wb7EIpJWA6/edit?usp=sharing&ouid=107401702043394787519&rtpof=true&sd=true",
     codeDemos: "",
   },
   {
     date: "2/12",
     class: "4",
     topic: "Sphere/AAB/Cylinder Collisions, Ellipsoid/Triangle Collisions",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1B2wfdZw76xD3ZVI88ExtCDhWtATSDUG3/edit#slide=id.g208da49415f_0_0",
     codeDemos: "",
   },
   {

@@ -15,7 +15,7 @@ export const projects = [
       project: "Warmup 2",
       checkpoint: "Gameworld, ECS, Systems",
       dateDue: "2/26",
-      link: "",
+      link: "https://docs.google.com/document/d/1EIc-8l7LF0CDUogB_8HD67JS3geJIRwc/edit?usp=sharing&ouid=107401702043394787519&rtpof=true&sd=true",
     },
     {
       project: "Platformer",
