@@ -21,7 +21,7 @@ export const projects = [
       project: "Platformer",
       checkpoint: "Platformer 1 (Collisions)",
       dateDue: "3/12",
-      link: "",
+      link: "https://docs.google.com/document/d/1xiWeS9WJ4JRzAnQIdS19JBEFM0dZCbDo/edit?usp=sharing&ouid=107401702043394787519&rtpof=true&sd=true",
     },
     {
       project: "Platformer 2",
