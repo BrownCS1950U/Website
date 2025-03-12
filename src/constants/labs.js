@@ -13,6 +13,7 @@ export const labs = [
   {
     topic: "Lab 3",
     topic: "Collision Debugger",
+    date: "3/11",
     slides: "https://classroom.github.com/a/ztzpo-G8"
   },
   {
