@@ -12,9 +12,8 @@ export const labs = [
   },
   {
     topic: "Lab 3",
-    // topic: "More C++",
-    // date: "2/5",
-    slides: ""
+    topic: "Collision Debugger",
+    slides: "https://classroom.github.com/a/ztzpo-G8"
   },
   {
     topic: "Lab 4",
