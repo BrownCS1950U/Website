@@ -45,7 +45,7 @@ export const lectures = [
     date: "3/12",
     class: "6",
     topic: "Spatial Acceleration Data Structures",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1tOqRobg42AouxuCRX7Urh9YhZfYFQHqB/edit?usp=sharing&ouid=107401702043394787519&rtpof=true&sd=true",
     codeDemos: "",
   },
   {
