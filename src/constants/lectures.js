@@ -52,7 +52,7 @@ export const lectures = [
     date: "3/19",
     class: "8",
     topic: "AI and Pathfinding",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1Tw9-bxz1QY9Hs4krSroCLMQYPe0_sjOY/edit?usp=sharing&ouid=107401702043394787519&rtpof=true&sd=true",
     codeDemos: "",
   },
   {
