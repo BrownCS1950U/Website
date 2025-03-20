@@ -27,7 +27,7 @@ export const projects = [
       project: "Platformer 2",
       checkpoint: "Optimizations",
       dateDue: "4/2",
-      link: "",
+      link: "https://docs.google.com/document/d/13UsN7UG3ctMlS9kJVOCOBcF6UDkJCUTp/edit?usp=sharing&ouid=107401702043394787519&rtpof=true&sd=true",
     },
     {
       project: "Platformer 3",
