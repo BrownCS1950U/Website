@@ -33,7 +33,7 @@ export const projects = [
       project: "Platformer 3",
       checkpoint: "Pathfinding, AI",
       dateDue: "4/16",
-      link: "",
+      link: "https://docs.google.com/document/d/1DdeDjcYHPKidjC-XoySEeDk7qrsh2-Gl/edit?usp=sharing&ouid=104255555572779394170&rtpof=true&sd=true",
     },
     {
       project: "Final",
