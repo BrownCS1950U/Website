@@ -79,7 +79,7 @@ export const lectures = [
   {
     date: "4/16",
     class: "11",
-    topic: "Final Project Check-In 1",
+    topic: "🎮 Q&A with Jordan Tynes 🎮",
     googleSlides: "",
     codeDemos: "",
   },
@@ -94,7 +94,7 @@ export const lectures = [
   {
     date: "4/30",
     class: "13",
-    topic: "Final Project Check-In 2",
+    topic: "Final Project Check-In",
     googleSlides: "",
     codeDemos: "",
   },
