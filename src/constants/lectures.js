@@ -86,7 +86,7 @@ export const lectures = [
   {
     date: "4/23",
     class: "12",
-    topic: "👽 Q&A with Mobius Digital 👽",
+    topic: "👽 Q&A with Logan Dooley 👽",
     googleSlides: "",
     codeDemos: "",
 

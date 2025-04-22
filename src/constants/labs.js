@@ -5,8 +5,8 @@ export const labs = [
     slides: "https://docs.google.com/document/d/1cigrsK6drWl8M2O_rTFhiCyhYoMLyjwlxzKg5OntW0c/edit?usp=sharing"
   },
   {
+    topic: "Lab 2",
     topic: "New Renderer",
-    // topic: "Inputs",
     date: "2/8",
     slides: "https://classroom.github.com/a/wazy7EjD"
   },
