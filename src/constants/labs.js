@@ -5,7 +5,7 @@ export const labs = [
     slides: "https://docs.google.com/document/d/1cigrsK6drWl8M2O_rTFhiCyhYoMLyjwlxzKg5OntW0c/edit?usp=sharing"
   },
   {
-    topic: "Lab 2",
+    topic: "New Renderer",
     // topic: "Inputs",
     date: "2/8",
     slides: "https://classroom.github.com/a/wazy7EjD"
@@ -18,9 +18,9 @@ export const labs = [
   },
   {
     topic: "Lab 4",
-    // topic: "ECS???",
-    // date: "2/26",
-    slides: ""
+    topic: "Animations",
+    date: "4/22",
+    slides: "https://classroom.github.com/a/iBZhojkS"
   },
   {
     topic: "Lab 5",

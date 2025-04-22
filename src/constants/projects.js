@@ -39,7 +39,7 @@ export const projects = [
       project: "Final",
       checkpoint: "Game",
       dateDue: "5/6",
-      link: "",
+      link: "https://docs.google.com/document/d/151m-hTdUOW2J7ZJB_N3MU5HcvKcbhGMfgj2wlk155rg/edit?usp=sharing",
     },
     {
       project: "Presentation",

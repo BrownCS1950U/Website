@@ -73,7 +73,7 @@ export const lectures = [
     date: "4/9",
     class: "10",
     topic: "Final Project Topics",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1S27O3hVXSjqFJQFBxcJzLGH8mC8iq5wk/edit?usp=sharing&ouid=107401702043394787519&rtpof=true&sd=true",
     codeDemos: "",
   },
   {
