@@ -87,7 +87,7 @@ export const lectures = [
     date: "4/23",
     class: "12",
     topic: "👽 Q&A with Logan Dooley 👽",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1bBSZTu0RvAvnZLzb4So5THqvz5TOlbTIyufUFlGeS1o/edit?usp=sharing",
     codeDemos: "",
 
   },
