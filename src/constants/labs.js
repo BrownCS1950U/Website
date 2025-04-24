@@ -24,8 +24,8 @@ export const labs = [
   },
   {
     topic: "Lab 5",
-    // topic: "Optimize for fun",
-    // date: "3/12",
-    slides: ""
+    topic: "3D Audio & Terrain Generation",
+    date: "4/24",
+    slides: "https://classroom.github.com/a/17cL4R7-"
   },
 ];
