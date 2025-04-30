@@ -101,7 +101,7 @@ export const lectures = [
   {
     date: "5/7",
     class: "14",
-    topic: "Final Project Presentations at 5 PM",
+    topic: "Final Project Presentations at 4 PM",
     googleSlides: "",
     codeDemos: "",
   },
