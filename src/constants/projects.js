@@ -42,8 +42,14 @@ export const projects = [
       link: "https://docs.google.com/document/d/151m-hTdUOW2J7ZJB_N3MU5HcvKcbhGMfgj2wlk155rg/edit?usp=sharing",
     },
     {
+      project: "Final Project Videos",
+      checkpoint: "Game Play",
+      dateDue: "5/6",
+      link: "https://drive.google.com/drive/folders/1BZavM1ZLXQXBusEXMzmUwYm4dmpP5iw3?usp=sharing",
+    },
+    {
       project: "Presentation",
-      checkpoint: "",
+      checkpoint: "Game",
       dateDue: "5/7",
       link: "",
     },
