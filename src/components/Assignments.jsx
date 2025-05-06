@@ -21,9 +21,7 @@ const Assignments = ({onChange, onSky, onHome}) => {
       </div>
 
       <p>All assignments (except for the final) are due at 3pm of the day listed and will be checked for completion in person. </p>
-      <br></br>
-      <p>The link to sign up for times is here.
-      The final is due on Friday, May 6 at 9am.</p>
+   
       <br></br>
       <p> The stencil code template can be found <a target="_blank" rel="noopener noreferrer" className="underline text-[#00ccff]" href="https://classroom.github.com/a/2rC8PxkO"> Here</a> </p>
 
