@@ -102,7 +102,7 @@ export const lectures = [
     date: "5/7",
     class: "14",
     topic: "Final Project Presentations at 4 PM",
-    googleSlides: "",
+    googleSlides: "https://brown.zoom.us/j/98355531795",
     codeDemos: "",
   },
 ];
