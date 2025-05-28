@@ -40,8 +40,22 @@ const Resources = ({onChange, onSky, onHome}) => {
       <div>
       <h3 className="mt-5 text-2xl font-display ease-out duration-500 neon-text-blue font-normal">Previous Projects</h3>
       <hr className="mb-2 border-slate-600" />
-      <iframe width="100%" height="600" src="//www.youtube.com/embed/34tPeh4s24E" frameborder="0" allowfullscreen=""></iframe>
-
+     
+        <iframe
+          width="100%"
+          height="600"
+          src="//www.youtube.com/embed/YJKThAiUeXo?si=6RT0bX7RhBRfaYWY"
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
+        <br />
+        <iframe
+          width="100%"
+          height="600"
+          src="//www.youtube.com/embed/34tPeh4s24E"
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
       </div>
       </section>
       </section>
