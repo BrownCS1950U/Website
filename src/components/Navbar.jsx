@@ -23,7 +23,7 @@ const Navbar = ({onOverlaySelect, setAudio, audio}) => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
+      } w-full flex items-center py-5 fixed top-0 z-20  backdrop-blur-md bg-opacity-10${
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
