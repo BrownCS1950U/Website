@@ -19,6 +19,8 @@
   display: block;
 }
 
+.font-doom { font-family: 'Press Start 2P', monospace; }
+
 .black-gradient {
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -206,6 +208,11 @@
 .neon-text-blue {
   color: #00ccff;
   text-shadow: 0 0 7px #86e4fb, 0 0 32px #00a6ff;
+}
+
+.neon-text-red {
+  color: #b30000;
+  text-shadow: 0 0 7px #b30000, 0 0 32px #b30000,;
 }
 
 @layer utilities {

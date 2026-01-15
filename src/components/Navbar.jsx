@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { menu, close } from "../assets";
 
-const Navbar = ({onOverlaySelect, setAudio, audio}) => {
+const Navbar = ({ onOverlaySelect, setAudio, audio}) => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -11,8 +10,7 @@ const Navbar = ({onOverlaySelect, setAudio, audio}) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > 100) setScrolled(true);
-      else setScrolled(false);
+      setScrolled(scrollTop > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,96 +19,139 @@ const Navbar = ({onOverlaySelect, setAudio, audio}) => {
 
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20  backdrop-blur-md bg-opacity-10${
-        scrolled ? "bg-primary" : "bg-transparent"
-      }`}
+      className={`
+        w-full flex items-center h-16 fixed top-0 z-20
+        border-b-4 border-[#550000]
+        bg-cover bg-center
+        ${scrolled ? "opacity-100" : "opacity-95"}
+      `}
+      style={{
+        backgroundImage: "url('/Website/navtexture.jpg')",
+        backgroundRepeat: "repeat",
+        backgroundSize: "auto",
+      }}
     >
-      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
+      <div className="w-full flex items-center max-w-[100rem] mx-auto px-6 h-full">
+
         <div
-          className='flex items-center gap-2'
+          className="flex items-center gap-2 cursor-pointer"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            CS1950U&nbsp;
-            <span className='sm:block hidden'> &nbsp; | &nbsp; 3D Game Engines</span>
-          </p>
+          <p className="text-[#aaaaaa] text-[16px] font-doom tracking-widest">
+  CS1950U
+  <span className="sm:inline hidden font-doom text-[14px]"> | 3D Game Engines</span>
+</p>
+
+
         </div>
-        <svg 
-  xmlns="http://www.w3.org/2000/svg" 
-  width="30" 
-  height="30" 
-  viewBox="0 0 24 24" 
-  fill="none" 
-  stroke="currentColor" 
-  strokeWidth="2" 
-  strokeLinecap="round" 
-  strokeLinejoin="round" 
-  className={`cursor-pointer ${audio ? "text-[#00CCFF]" : "text-white"}`} 
-  onClick={() => setAudio(!audio)}
->
-  <path d="M2 10v3"/>
-  <path d="M6 6v11"/>
-  <path d="M10 3v18"/>
-  <path d="M14 8v7"/>
-  <path d="M18 5v13"/>
-  <path d="M22 10v3"/>
-</svg>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.title ? "text-[#00ccff] font-display ease-out duration-200 neon-text-blue font-normal" : "text-white"
-              } hover:text-[#53ddff] text-[18px] font-medium cursor-pointer`}
-              onClick={() => {
-                setActive(nav.title);
-                onOverlaySelect(nav.title);
-                }
-              }
-            >
-              <div>{nav.title}</div>
-            </li>
-          ))}
-        </ul>
+        {/* AUDIO ICON */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={`cursor-pointer ml-4 ${audio ? "text-[#aa0000]" : "text-white"}`}
+          onClick={() => setAudio(!audio)}
+        >
+          <path d="M2 10v3" />
+          <path d="M6 6v11" />
+          <path d="M10 3v18" />
+          <path d="M14 8v7" />
+          <path d="M18 5v13" />
+          <path d="M22 10v3" />
+        </svg>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        {/* BUTTON BAR — TAKES ALL REMAINING SPACE */}
+        <div className="flex-1 h-full flex ml-6">
+          <ul className="list-none hidden sm:flex flex-row gap-0 w-full h-full">
+            {navLinks.map((nav) => (
+              <li
+                key={nav.id}
+                className={`
+                  flex-1 h-full flex items-center justify-center text-center
+                  text-[20px] font-doom tracking-widest cursor-pointer
+                  px-5
+                  border-2
+                  ${active === nav.title ? "border-red-600" : "border-[#550000]"}
+                  text-white
+                  hover:border-red-600
+                  shadow-[inset_0_0_6px_#000]
+                `}
+                style={{
+                  backgroundImage: "url('/Website/button.jpg')",
+                  backgroundRepeat: "repeat",
+                  backgroundSize: "128px",
+                  imageRendering: "pixelated",
+                }}
+                onClick={() => {
+                  setActive(nav.title);
+                  onOverlaySelect(nav.title);
+                }}
+              >
+                {nav.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* MOBILE MENU BUTTON */}
+        <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
-            alt='menu'
-            className='w-[28px] h-[28px] object-contain'
+            alt="menu"
+            className="w-[28px] h-[28px] object-contain"
             onClick={() => setToggle(!toggle)}
           />
 
+          {/* MOBILE DROPDOWN */}
           <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 bg-black absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            className={`
+              ${!toggle ? "hidden" : "flex"}
+              p-6 bg-[#1a0000] border-2 border-[#550000]
+              absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl
+            `}
           >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+            <ul className="list-none flex flex-col gap-4 w-full">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-[#00ccff]" : "text-white"
-                  }`}
+                  className={`
+                    w-full text-center block
+                    text-[12px] font-doom tracking-widest cursor-pointer
+                    px-3 py-2 border-2
+                    ${active === nav.title ? "border-red-600" : "border-[#550000]"}
+                    text-white
+                    hover:border-red-600
+                    shadow-[inset_0_0_6px_#000]
+                  `}
+                  style={{
+                    backgroundImage: "url('/Website/button.jpg')",
+                    backgroundRepeat: "repeat",
+                    backgroundSize: "128px",
+                    imageRendering: "pixelated",
+                  }}
                   onClick={() => {
-                    setToggle(!toggle);
+                    setToggle(false);
                     setActive(nav.title);
                     onOverlaySelect(nav.title);
                   }}
                 >
-                  <div>{nav.title}</div>
+                  {nav.title}
                 </li>
               ))}
             </ul>
           </div>
         </div>
+
       </div>
     </nav>
   );

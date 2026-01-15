@@ -2,8 +2,8 @@ export const sections = [
     {
       title: "Forms",
       links: [
-        { href: "https://forms.gle/srYNPvRaBaquZ2pR9", label: "Collaboration Policy Form" },
-        { href: "https://forms.gle/NCN64bBJXG5Ycs3x8", label: "Anonymous Feedback Form" },
+        { href: "https://docs.google.com/forms/d/e/1FAIpQLSd8KIPV2QJnxmVwP0aD7kZGTdjLEshOVwi4fQs7t3xbN0anAQ/viewform?usp=sharing&ouid=105263982593318355462", label: "Collaboration Policy Form" },
+        { href: "https://docs.google.com/forms/d/e/1FAIpQLSeOFTfladu5UPx-yRUd3lfxLs8zwZhl8B_zuk6yL7eHDXFi0w/viewform?usp=sharing&ouid=105263982593318355462", label: "Anonymous Feedback Form" },
         { href: "https://forms.gle/zV5vphiDysmAMHnx8", label: "Lab Feedback Form" },
       ],
     },

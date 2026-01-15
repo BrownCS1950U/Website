@@ -13,7 +13,21 @@ const Resources = ({onChange, onSky, onHome}) => {
   >
 
       <div className=" mx-[20%] relative overflow-y-auto no-scrollbar h-full">
+      
+      <div
+  className="fixed inset-0"
+  style={{
+    backgroundImage: "url('/Website/11.jpg')",
+    backgroundRepeat: "repeat",
+    backgroundSize: "auto",
+    imageRendering: "pixelated",
+  }}
+/>
+      
       <section className="mt-[10%] mb-[10%]">
+        <div
+        className="bg-black/60 shadow-[inset_0_0_12px_#000] p-8 rounded-md backdrop-blur-sm "
+        style={{ imageRendering: 'pixelated' }} >
       <section id="resources">
       <div>
         <h2 className={styles.titleHeadText}>Resources</h2>
@@ -21,13 +35,13 @@ const Resources = ({onChange, onSky, onHome}) => {
       <div className="flex flex-wrap gap-4">
         {sections.map((section, index) => (
           <div key={index}>
-            <h3 className="mt-5 text-2xl ease-out duration-500 neon-text-blue font-normal">{section.title}</h3>
+            <h3 className="mt-5 text-2xl ease-out duration-500 neon-text-red font-normal">{section.title}</h3>
             <hr className="mb-2 border-slate-600" />
             <div className="flex flex-col gap-1">
               {section.links.map((link, linkIndex) => (
                 <a
                   key={linkIndex}
-                  className="w-fit mr-10 text-lg"
+                  className="w-fit mr-10 text-lg hover-glow"
                   href={link.href}
                 >
                   {link.label}
@@ -38,7 +52,7 @@ const Resources = ({onChange, onSky, onHome}) => {
         ))}
       </div>
       <div>
-      <h3 className="mt-5 text-2xl font-display ease-out duration-500 neon-text-blue font-normal">Previous Projects</h3>
+      <h3 className="mt-5 text-2xl font-display ease-out duration-500 neon-text-red font-normal">Previous Projects</h3>
       <hr className="mb-2 border-slate-600" />
      
         <iframe
@@ -58,6 +72,7 @@ const Resources = ({onChange, onSky, onHome}) => {
         ></iframe>
       </div>
       </section>
+      </div>
       </section>
       </div>
     </div>

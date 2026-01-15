@@ -1,7 +1,7 @@
 import React from "react";
 
-const Table = ({ data, lectures = false, projects = false, labs = false }) => {
-  const commonClasses = "pb-3 text-[#00CCFF] font-display ease-out duration-500 neon-text-blue font-bold";
+const Table = ({ data, lectures = false, projects = false, labs = false, onOverlaySelect }) => {
+  const commonClasses = "pb-3 text-[#00CCFF] font-display ease-out duration-500 neon-text-red font-bold";
 
   return (
     <table className="w-full mx-auto">
@@ -39,19 +39,12 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                 <td className="px-5 text-left">{item.checkpoint}</td>
                 <td className="px-5 text-right">{item.dateDue}</td>
                 <td className="text-right">
-                  {item.link ? (
-                    <a
-                      className="hover-glow focus:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={item.link}
-                      style={{ color: "#00CCFF", fontWeight: "bold" }}
-                    >
-                      Link
-                    </a>
-                  ) : (
-                    "-"
-                  )}
+                  {item.link ? 
+                  ( <span 
+                  className="hover-glow focus:underline cursor-pointer" 
+                  style={{ color: "#b30000", fontWeight: "bold" }} 
+                  onClick={() => onOverlaySelect(item.link)} > 
+                  Handout </span> ) : ( "-" )}
                 </td>
               </>
             ) : labs ? (
@@ -66,7 +59,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={item.slides}
-                      style={{ color: "#00CCFF", fontWeight: "bold" }}
+                      style={{ color: "#b30000", fontWeight: "bold" }}
                     >
                       Handout
                     </a>
@@ -74,21 +67,6 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                     "-"
                   )}
                 </td>
-                {/* <td className="text-right">
-                  {item.submission_folder ? (
-                    <a
-                      className="hover-glow focus:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={item.submission_folder}
-                      style={{ color: "#00CCFF", fontWeight: "bold" }}
-                    >
-                      Submission
-                    </a>
-                  ) : (
-                    "-"
-                  )}
-                </td> */}
               </>
             ) : (
               <>
@@ -101,7 +79,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={item.googleSlides}
-                      style={{ color: "#00CCFF", fontWeight: "bold" }}
+                      style={{ color: "#b30000", fontWeight: "bold" }}
                     >
                       Slides
                     </a>
@@ -116,7 +94,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={item.codeDemos}
-                      style={{ color: "#00CCFF", fontWeight: "bold" }}
+                      style={{ color: "#b30000", fontWeight: "bold" }}
                     >
                       Demo
                     </a>
@@ -132,7 +110,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         href={item.worksheets}
-                        style={{ color: "#00CCFF", fontWeight: "bold" }}
+                        style={{ color: "#b30000", fontWeight: "bold" }}
                       >
                         Worksheet
                       </a>

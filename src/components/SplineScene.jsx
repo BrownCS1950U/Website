@@ -77,12 +77,12 @@ const SplineScene = ({ transition, onSky, onHome, value }) => {
           transition ? "transform -translate-x-full" : "transform translate-x-0"
         }`}
       >
-        <h1 className={`${transition ? "text-transparent" : styles.heroHeadText}`}>
+        {/* <h1 className={`${transition ? "text-transparent" : styles.heroHeadText}`}>
           Welcome to <br />
           <span className={`${transition ? "text-transparent" : styles.titleHeadText}`}>
             3D Game Engines
           </span>
-        </h1>
+        </h1> */}
       </div>
     </div>
   );
