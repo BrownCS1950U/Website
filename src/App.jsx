@@ -1,180 +1,100 @@
+import { Routes, Route, useLocation } from "react-router-dom";
 import { About, Hero, Classes, Assignments, Resources, Labs, Navbar } from "./components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
 import AssignmentPage1 from "./components/AssignmentHandouts/Assignment1";
 import AssignmentPage2 from "./components/AssignmentHandouts/Assignment2";
 import AssignmentPage3 from "./components/AssignmentHandouts/Assignment3";
 import AssignmentPage4 from "./components/AssignmentHandouts/Assignment4";
 import AssignmentPage5 from "./components/AssignmentHandouts/Assignment5";
 import AssignmentPage6 from "./components/AssignmentHandouts/Assignment6";
+
 import CollaborationPolicy from "./components/CollaborationPolicy";
-import VideoTextureBackground from "./components/VideoTextureBackground";
 import Syllabus from "./components/Syllabus";
-import { useRef } from "react";
+
+// NEW GLOBAL BACKGROUND
+import CyclingTextureBackground from "./components/CyclingTextureBackground";
 
 const App = () => {
-  const [scrollValue, setScrollValue] = useState(-1);
-  const [showAbout, setShowAbout] = useState(false);
+  const location = useLocation();
+
   const [showTitle, setShowTitle] = useState(false);
   const [onSky, setOnSky] = useState(false);
   const [onHome, setOnHome] = useState(true);
   const [rotationValue, setRotationValue] = useState(0);
+
   const [audioEnabled, setAudioEnabled] = useState(false);
   const audioRef = useState(new Audio("/Website/darkhalls.mp3"))[0];
-
-  const [currentOverlay, setCurrentOverlay] = useState("Home");
-
-  const handleShowOverlay = (componentName) => {
-    setCurrentOverlay(componentName);
-  };
-
-  const handleShowTitle = (value) => {
-    setShowTitle(value);
-  };
-
-  const handleOnSky = (value) => {
-    setOnSky(value);
-  };
-
-  const handleOnHome = (value) => {
-    setOnHome(value);
-  };
 
   const handleAudio = (value) => {
     setAudioEnabled(value);
     if (value) {
       audioRef.loop = true;
-      audioRef.play()
-        .then(() => setAudioEnabled(true))
-        .catch((error) => console.error("Audio playback failed", error));
+      audioRef.play().catch(() => {});
     } else {
-      try {
-        audioRef.loop = false;
-        audioRef.pause();
-        setAudioEnabled(false);
-      } catch (error) {
-        console.error("Audio pause failed!", error);
-      }
+      audioRef.loop = false;
+      audioRef.pause();
     }
   };
-
-  const handleWheel = (event) => {
-    setScrollValue((prev) => {
-      const newValue = prev + (event.deltaY > 0 ? 1 : -1);
-      const clampedValue = Math.min(15, Math.max(newValue, -5));
-      if (clampedValue < 0) {
-        setShowAbout(false);
-        setShowTitle(false);
-      } else {
-        setShowAbout(true);
-        setShowTitle(true);
-      }
-      setRotationValue(clampedValue);
-      return clampedValue;
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("wheel", handleWheel);
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
 
   return (
     <div className="relative">
 
-      {/* background */}
-      {currentOverlay === "Home" ? (
-        <VideoTextureBackground src="/Website/fire.mp4" />
-      ) : (
-        <div
-          className="fixed inset-0 z-0"
-          style={{
-            backgroundImage: "url('/Website/metaltexture.png')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "auto",
-            imageRendering: "pixelated",
-          }}
-        />
+      {/* GLOBAL CYCLING BACKGROUND */}
+      {location.pathname === "/" && (
+      <CyclingTextureBackground
+        images={[
+          "/Website/fire1.jpg",
+          "/Website/fire2.jpg",
+          "/Website/fire3.jpg",
+          "/Website/fire4.jpg",
+        ]}
+        interval={1000}
+      />
       )}
 
-      {/* translucent layer on top of background */}
-      <div className="fixed inset-0 bg-black/40 z-0 pointer-events-none" />
-
-      {/* main content that goes on top */}
+      {/* MAIN CONTENT */}
       <div className="relative z-10">
+        <Navbar audio={audioEnabled} setAudio={handleAudio} />
 
-        <Navbar
-          onOverlaySelect={handleShowOverlay}
-          setAudio={handleAudio}
-          audio={audioEnabled}
-        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <div className="relative h-screen">
+                  <Hero
+                    transition={showTitle}
+                    onSky={setOnSky}
+                    onHome={setOnHome}
+                    value={rotationValue}
+                  />
+                </div>
 
-        {currentOverlay === "Home" && (
-  <div className="relative h-screen">
-    <Hero
-      transition={showTitle}
-      onSky={handleOnSky}
-      onHome={handleOnHome}
-      value={rotationValue}
-    />
-  </div>
-)}
-
-        {currentOverlay === "Assignment1" && ( <AssignmentPage1 id={1} onOverlaySelect={handleShowOverlay} /> )}
-        {currentOverlay === "Assignment2" && <AssignmentPage2 id={2} />}
-        {currentOverlay === "Assignment3" && <AssignmentPage3 id={3} />}
-        {currentOverlay === "Assignment4" && <AssignmentPage4 id={4} />}
-        {currentOverlay === "Assignment5" && <AssignmentPage5 id={5} />}
-        {currentOverlay === "Assignment6" && <AssignmentPage6 id={6} />}
-        {currentOverlay === "CollaborationPolicy" && ( <CollaborationPolicy id={7} /> )}
-
-        {currentOverlay === "Classes" && (
-          <Classes
-            onChange={handleShowTitle}
-            onSky={handleOnSky}
-            onHome={handleOnHome}
+                <About
+                  showAbout={true}
+                  onSky={setOnSky}
+                  onHome={setOnHome}
+                />
+              </>
+            }
           />
-        )}
 
-        {currentOverlay === "Home" && (
-  <About
-    showAbout={showAbout}
-    onSky={handleOnSky}
-    onHome={handleOnHome}
-    onOverlaySelect={handleShowOverlay}
-  />
-)}
+          <Route path="/assignment1" element={<AssignmentPage1 />} />
+          <Route path="/assignment2" element={<AssignmentPage2 />} />
+          <Route path="/assignment3" element={<AssignmentPage3 />} />
+          <Route path="/assignment4" element={<AssignmentPage4 />} />
+          <Route path="/assignment5" element={<AssignmentPage5 />} />
+          <Route path="/assignment6" element={<AssignmentPage6 />} />
 
-{currentOverlay === "Syllabus" && (
-  <Syllabus onSky={handleOnSky} onHome={handleOnHome} />
-)}
+          <Route path="/collaboration-policy" element={<CollaborationPolicy />} />
+          <Route path="/syllabus" element={<Syllabus />} />
 
-        {currentOverlay === "Assignments" && (
-          <Assignments
-            onChange={handleShowTitle}
-            onSky={handleOnSky}
-            onHome={handleOnHome}
-            onOverlaySelect={handleShowOverlay}
-          />
-        )}
-
-        {currentOverlay === "Resources" && (
-          <Resources
-            onChange={handleShowTitle}
-            onSky={handleOnSky}
-            onHome={handleOnHome}
-          />
-        )}
-
-        {currentOverlay === "Labs" && (
-          <Labs
-            onChange={handleShowTitle}
-            onSky={handleOnSky}
-            onHome={handleOnHome}
-          />
-        )}
-
+          <Route path="/classes" element={<Classes />} />
+          <Route path="/assignments" element={<Assignments />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/labs" element={<Labs />} />
+        </Routes>
       </div>
     </div>
   );

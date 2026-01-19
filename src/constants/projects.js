@@ -3,13 +3,13 @@ export const projects = [
       project: "Warmup",
       checkpoint: "Setup Tutorial",
       dateDue: "1/28",
-      link: "Assignment1",
+      link: "",
     },
     {
       project: "Warmup 1",
       checkpoint: "Basic Engine Architecture",
       dateDue: "2/4",
-      link: "Assignment2",
+      link: "",
     },
     {
       project: "Warmup 2",
@@ -29,16 +29,21 @@ export const projects = [
       dateDue: "4/1",
       link: "",
     },
+    
     {
       project: "Platformer 3",
       checkpoint: "Pathfinding, AI",
       dateDue: "4/15",
-      link: "Assignment1",
+      link: "",
+    },
+    
+    {
       project: "Final Project",
       checkpoint: "Submission",
       dateDue: "5/5",
       link: "",
     },
+    
     {
       project: "Final Project",
       checkpoint: "Presentation",

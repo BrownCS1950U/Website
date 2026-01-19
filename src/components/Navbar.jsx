@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { navLinks } from "../constants";
 import { menu, close } from "../assets";
 
-const Navbar = ({ onOverlaySelect, setAudio, audio}) => {
+const Navbar = ({ audio, setAudio }) => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +19,12 @@ const Navbar = ({ onOverlaySelect, setAudio, audio}) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Update active link based on URL
+  useEffect(() => {
+    const current = navLinks.find((n) => n.path === location.pathname);
+    setActive(current ? current.title : "");
+  }, [location.pathname]);
 
   return (
     <nav
@@ -29,24 +38,24 @@ const Navbar = ({ onOverlaySelect, setAudio, audio}) => {
         backgroundImage: "url('/Website/navtexture.jpg')",
         backgroundRepeat: "repeat",
         backgroundSize: "auto",
+        imageRendering: "pixelated",
       }}
     >
       <div className="w-full flex items-center max-w-[100rem] mx-auto px-6 h-full">
 
-        <div
-          className="flex items-center gap-2 cursor-pointer"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
-        >
+        {/* LOGO */}
+        <Link
+  to="/"
+  className="flex items-center gap-2 cursor-pointer"
+>
+
           <p className="text-[#aaaaaa] text-[16px] font-doom tracking-widest">
-  CS1950U
-  <span className="sm:inline hidden font-doom text-[14px]"> | 3D Game Engines</span>
-</p>
-
-
-        </div>
+            CS1950U
+            <span className="sm:inline hidden font-doom text-[14px]">
+              {" "} | 3D Game Engines
+            </span>
+          </p>
+        </Link>
 
         {/* AUDIO ICON */}
         <svg
@@ -70,7 +79,7 @@ const Navbar = ({ onOverlaySelect, setAudio, audio}) => {
           <path d="M22 10v3" />
         </svg>
 
-        {/* BUTTON BAR — TAKES ALL REMAINING SPACE */}
+        {/* DESKTOP NAV */}
         <div className="flex-1 h-full flex ml-6">
           <ul className="list-none hidden sm:flex flex-row gap-0 w-full h-full">
             {navLinks.map((nav) => (
@@ -79,11 +88,9 @@ const Navbar = ({ onOverlaySelect, setAudio, audio}) => {
                 className={`
                   flex-1 h-full flex items-center justify-center text-center
                   text-[20px] font-doom tracking-widest cursor-pointer
-                  px-5
-                  border-2
+                  px-5 border-2
                   ${active === nav.title ? "border-red-600" : "border-[#550000]"}
-                  text-white
-                  hover:border-red-600
+                  text-white hover:border-red-600
                   shadow-[inset_0_0_6px_#000]
                 `}
                 style={{
@@ -92,12 +99,14 @@ const Navbar = ({ onOverlaySelect, setAudio, audio}) => {
                   backgroundSize: "128px",
                   imageRendering: "pixelated",
                 }}
-                onClick={() => {
-                  setActive(nav.title);
-                  onOverlaySelect(nav.title);
-                }}
               >
-                {nav.title}
+                <Link
+                  to={nav.path}
+                  className="w-full h-full flex items-center justify-center"
+                  onClick={() => setActive(nav.title)}
+                >
+                  {nav.title}
+                </Link>
               </li>
             ))}
           </ul>
@@ -129,8 +138,7 @@ const Navbar = ({ onOverlaySelect, setAudio, audio}) => {
                     text-[12px] font-doom tracking-widest cursor-pointer
                     px-3 py-2 border-2
                     ${active === nav.title ? "border-red-600" : "border-[#550000]"}
-                    text-white
-                    hover:border-red-600
+                    text-white hover:border-red-600
                     shadow-[inset_0_0_6px_#000]
                   `}
                   style={{
@@ -139,13 +147,16 @@ const Navbar = ({ onOverlaySelect, setAudio, audio}) => {
                     backgroundSize: "128px",
                     imageRendering: "pixelated",
                   }}
-                  onClick={() => {
-                    setToggle(false);
-                    setActive(nav.title);
-                    onOverlaySelect(nav.title);
-                  }}
                 >
-                  {nav.title}
+                  <Link
+                    to={nav.path}
+                    onClick={() => {
+                      setToggle(false);
+                      setActive(nav.title);
+                    }}
+                  >
+                    {nav.title}
+                  </Link>
                 </li>
               ))}
             </ul>

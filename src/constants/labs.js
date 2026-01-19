@@ -1,31 +1,31 @@
 export const labs = [
   {
-    topic: "Introduction",
-    date: "TBD",
+    topic: "C++ Introduction",
+    date: "2/4",
     slides: ""
   },
   {
     topic: "Lab 2",
-    topic: "New Renderer",
-    date: "TBD",
+    topic: "Debugger / ImGui",
+    date: "2/11",
     slides: ""
   },
   {
     topic: "Lab 3",
     topic: "Collision Debugger",
-    date: "TBD",
+    date: "3/11",
     slides: ""
   },
   {
     topic: "Lab 4",
     topic: "Animations",
-    date: "TBD",
+    date: "4/1",
     slides: ""
   },
   {
     topic: "Lab 5",
-    topic: "3D Audio & Terrain Generation",
-    date: "TBD",
+    topic: "3D Audio (Optional)",
+    date: "4/8",
     slides: ""
   },
 ];

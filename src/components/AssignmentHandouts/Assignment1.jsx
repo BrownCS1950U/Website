@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Assignment1 = ({ onOverlaySelect }) => {
     return (
@@ -34,7 +35,7 @@ const Assignment1 = ({ onOverlaySelect }) => {
                             The TA staff encourages you to look at and play around with the support code. This tutorial will only use a few functions but feel free to explore various functions for yourself!
                         </li>
                         <li>
-                            You will be writing C++ code for the entire semester, which we do not explicitly teach other than weekly tips. If you have not written much C++ code before, we strongly recommend you to check out the CS1230 first lab and resources on C++ to get started. 
+                            You will be writing C++ code for the entire semester, which we do not explicitly teach other than weekly tips. If you have not written much C++ code before, we strongly recommend you to check out the CS1230 first lab and resources on C++ to get started.
                         </li>
                         <li>
                             In addition, while this course is NOT a course in computer graphics, it will still be helpful to understand the graphics pipeline and some basic OpenGL concepts if you wish to be fully fluent with the stencil code. A good introduction to OpenGL can be found here:{" "}
@@ -54,25 +55,27 @@ const Assignment1 = ({ onOverlaySelect }) => {
                     <h2 className="mt-10 text-[#b30000] text-3xl font-bold">
                         Collaboration Policy & TA Hours Form!
                     </h2>
+
                     <p className="mt-4">
-                      Before beginning this assignment, please read  
-                      <span
-                        className="underline text-[#00ccff] cursor-pointer"
-                        onClick={() => onOverlaySelect("CollaborationPolicy")}
+                        Before beginning this assignment, please read
+                        <Link
+                            to="/collaboration-policy"
+                            className="underline text-[#00ccff] cursor-pointer"
                         >
-                          {" "} the collaboration policy
-                          </span>
-                         {" "} and fill out the respective  
+                            {" "} the collaboration policy
+                        </Link>
+                        {" "} and fill out the respective
                         <a
-                                href="https://forms.gle/srYNPvRaBaquZ2pR9"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="underline text-[#00ccff]"
-                            >
-                                {" "}  form
-                            </a>
-                            .
+                            href="https://forms.gle/srYNPvRaBaquZ2pR9"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline text-[#00ccff]"
+                        >
+                            {" "} form
+                        </a>
+                        .
                     </p>
+
 
                     {/* ---------------- DOWNLOADING ---------------- */}
                     <h2 className="mt-10text-[#b30000] text-3xl font-bold">Downloading the Stencil</h2>
@@ -98,31 +101,31 @@ const Assignment1 = ({ onOverlaySelect }) => {
                     <p className="mt-4">
                         For installation and use of Qt Creator, we recommend following the entirety of Section 3 of Lab 1 from CS1230 linked
                         <a
-                                href="https://cs1230.graphics/labs/lab1/#qt-and-qt-creator"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="underline text-[#00ccff]"
-                            >
-                                {" "}here{" "}
-                            </a>
+                            href="https://cs1230.graphics/labs/lab1/#qt-and-qt-creator"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline text-[#00ccff]"
+                        >
+                            {" "}here{" "}
+                        </a>
                         Note that because we do not use Qt in the stencil (just Qt Creator), you can skip the selection of Qt 6.5.2 in section 3.1. In section 3.3, open the CMakeLists.txt of the stencil repository.
                     </p>
 
                     {/* ---------------- OPTION 2 ---------------- */}
                     <h2 className="mt-10 text-2xl font-bold">Option 2: CLion Setup</h2>
                     <p className="mt-4">
-                        Download and install CLion 
+                        Download and install CLion
                         <a
-                                href="https://www.jetbrains.com/clion/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="underline text-[#00ccff]"
-                            >
-                                {" "}here{" "}
-                            </a> 
+                            href="https://www.jetbrains.com/clion/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline text-[#00ccff]"
+                        >
+                            {" "}here{" "}
+                        </a>
                         (you’re eligible for a free educational license with your school email). After installation:
                     </p>
-                      <ul className="list-disc ml-6 mt-4 space-y-2">
+                    <ul className="list-disc ml-6 mt-4 space-y-2">
                         <li>
                             Open the Project:
                             <ul className="list-[circle] ml-6 mt-2 space-y-1">
@@ -251,7 +254,7 @@ const Assignment1 = ({ onOverlaySelect }) => {
                     <p className="mt-4">
                         To begin on your journey, navigate to Engine/core.cpp’s draw() function and let’s first discuss what is necessary to draw a shape using the given stencil.
                     </p>
-                                        <ol className="list-decimal ml-6 mt-4 space-y-4">
+                    <ol className="list-decimal ml-6 mt-4 space-y-4">
                         <li>
                             The first function present here is what tells our computer to wipe clean any data it previously stored to represent the screen. Generally you will always want to make this call at the start of any given frame. You can use the operator | to indicate multiple “bits” you wish to clear as well. For example here we see GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT. Clearing GL_COLOR_BUFFER_BIT will result in the screen all the same color which is default set to black. You can change this default color by calling Global::graphics.setClearColor(glm::vec3 clearColor) where clearColor is a glm::vec3 of floating point values between 0 to 1 in each channel (R, G, and B). Clearing GL_DEPTH_BUFFER_BIT will ensure that you don’t see shapes overlap in the wrong order or in strange locations.
                             <div className="border p-2 border-white">

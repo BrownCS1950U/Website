@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Table = ({ data, lectures = false, projects = false, labs = false, onOverlaySelect }) => {
-  const commonClasses = "pb-3 text-[#00CCFF] font-display ease-out duration-500 neon-text-red font-bold";
+const Table = ({ data, lectures = false, projects = false, labs = false }) => {
+  const commonClasses =
+    "pb-3 text-[#00CCFF] font-display ease-out duration-500 neon-text-red font-bold";
 
   return (
     <table className="w-full mx-auto">
@@ -11,13 +13,13 @@ const Table = ({ data, lectures = false, projects = false, labs = false, onOverl
             <>
               <th className={`text-left ${commonClasses}`}>Project</th>
               <th className={`px-5 text-left ${commonClasses}`}>Checkpoint</th>
-              <th className={`text-right ${commonClasses}`}>Date Due</th>
+              <th className={`text-right ${commonClasses}`}>Due Date</th>
               <th className={`text-right ${commonClasses}`}>Link</th>
             </>
           ) : labs ? (
             <>
               <th className={`text-left ${commonClasses}`}>Topic</th>
-              <th className={`px-5 text-right ${commonClasses}`}>Date</th>
+              <th className={`px-5 text-right ${commonClasses}`}>Due Date</th>
               <th className={`text-right ${commonClasses}`}>Handout</th>
             </>
           ) : (
@@ -25,11 +27,11 @@ const Table = ({ data, lectures = false, projects = false, labs = false, onOverl
               <th className={`text-left ${commonClasses}`}>Topic</th>
               <th className={`px-5 text-right ${commonClasses}`}>Date</th>
               <th className={`text-right ${commonClasses}`}>Google Slides</th>
-              <th className={`text-right ${commonClasses}`}>Code Demos</th>
             </>
           )}
         </tr>
       </thead>
+
       <tbody>
         {data.map((item, index) => (
           <tr key={index}>
@@ -38,13 +40,21 @@ const Table = ({ data, lectures = false, projects = false, labs = false, onOverl
                 <td className="py-3 text-left">{item.project}</td>
                 <td className="px-5 text-left">{item.checkpoint}</td>
                 <td className="px-5 text-right">{item.dateDue}</td>
+
                 <td className="text-right">
-                  {item.link ? 
-                  ( <span 
-                  className="hover-glow focus:underline cursor-pointer" 
-                  style={{ color: "#b30000", fontWeight: "bold" }} 
-                  onClick={() => onOverlaySelect(item.link)} > 
-                  Handout </span> ) : ( "-" )}
+                  {item.link ? (
+                    <Link
+  to={`/${item.link.replace(/^\//, "")}`}
+  className="hover-glow focus:underline"
+  style={{ color: "#b30000", fontWeight: "bold" }}
+>
+  Handout
+</Link>
+
+
+                  ) : (
+                    "-"
+                  )}
                 </td>
               </>
             ) : labs ? (
@@ -54,7 +64,6 @@ const Table = ({ data, lectures = false, projects = false, labs = false, onOverl
                 <td className="text-right">
                   {item.slides ? (
                     <a
-                      
                       className="hover-glow focus:underline"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -72,6 +81,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false, onOverl
               <>
                 <td className="py-3 text-left">{item.topic}</td>
                 <td className="px-5 text-right">{item.date}</td>
+
                 <td className="text-right">
                   {item.googleSlides ? (
                     <a
@@ -87,22 +97,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false, onOverl
                     "-"
                   )}
                 </td>
-                <td className="text-right">
-                  {item.codeDemos ? (
-                    <a
-                      className="hover-glow focus:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={item.codeDemos}
-                      style={{ color: "#b30000", fontWeight: "bold" }}
-                    >
-                      Demo
-                    </a>
-                  ) : (
-                    "-"
-                  )}
-                </td>
-                {!lectures ? (
+                {!lectures && (
                   <td className="text-right">
                     {item.worksheets ? (
                       <a
@@ -118,8 +113,6 @@ const Table = ({ data, lectures = false, projects = false, labs = false, onOverl
                       "-"
                     )}
                   </td>
-                ) : (
-                  <></>
                 )}
               </>
             )}
