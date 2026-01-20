@@ -65,13 +65,13 @@ const creatureSrc = `/Website/creatures/${creatureIndex}.gif`;
                   </div>
                 </div>
                 <hr className="my-2 border-t-2 border-[#b30000]" />
-                {/* <Link
+                <Link
                   to="/syllabus"
                   className="underline cursor-pointer"
                   //className="hover-glow"
                   style={{fontWeight: "bold" }}>
                   {" "} Syllabus
-                </Link> */}
+                </Link>
                 <div>
                   {/* <a target="_blank" className="underline" href="https://maps.app.goo.gl/1xfqYMQZHMA6Jadg9">Slack</a> */}
                 </div>

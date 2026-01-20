@@ -93,7 +93,7 @@ const Assignment1 = ({ onOverlaySelect }) => {
                           and build via command line.
                     </p>
 
-                    {/* ---------------- OPTION 1 ---------------- */}
+                    {/* Option 1 */}
                     <h2 className="mt-10 text-2xl font-bold">Option 1: Qt Creator Setup</h2>
                     <p className="mt-4">
                         For installation and use of Qt Creator, we recommend following the
@@ -111,7 +111,7 @@ const Assignment1 = ({ onOverlaySelect }) => {
                          open the CMakeLists.txt of the stencil repository.
                     </p>
 
-                    {/* ---------------- OPTION 2 ---------------- */}
+                    {/* Option 2 */}
                     <h2 className="mt-10 text-2xl font-bold">Option 2: CLion Setup</h2>
                     <p className="mt-4">
                         Download and install CLion{" "}
@@ -123,7 +123,8 @@ const Assignment1 = ({ onOverlaySelect }) => {
                         >
                             here
                         </a>
-                        {" "}(you’re eligible for a free educational license with your school email).
+                        {" "}(you’re eligible for a free educational license with your school
+                         email).
                         After installation:
                     </p>
                     <ul className="list-disc ml-6 mt-4 space-y-2">
@@ -144,10 +145,14 @@ const Assignment1 = ({ onOverlaySelect }) => {
                                     When opening a new project in CLion, you’ll see the project wizard.
                                 </li>
                                 <li>
-                                    Tick Reload CMake project on editing CMakeLists.txt or other CMake configuration files at the top. This saves you from manually reconfiguring the project after editing configurations.
+                                    Tick Reload CMake project on editing CMakeLists.txt or other CMake configuration
+                                    files at the top. This saves you from manually reconfiguring the project after 
+                                    editing configurations.
                                 </li>
                                 <li>
-                                    On the left of the Profiles panel, you’ll see a default Debug profile. Click the + button to add a new profile, and CLion will automatically create a Release profile.
+                                    On the left of the Profiles panel, you’ll see a default Debug profile. 
+                                    Click the + button to add a new profile, and CLion will automatically 
+                                    create a Release profile.
                                 </li>
                                 <li>Click OK to finish.</li>
                             </ul>
@@ -162,10 +167,14 @@ const Assignment1 = ({ onOverlaySelect }) => {
                         />
                     </div>
 
-                    {/* ---------------- EXPLORING STENCIL ---------------- */}
+                    {/* Exploring Stencil */}
                     <h2 className="mt-10 text-[#b30000] text-3xl font-bold">Exploring the Stencil</h2>
                     <p className="mt-4">
-                        Upon compiling and building the project, running the executable should open a window that displays the phrase “Welcome to CS1950U!”. If you do not see this, please let a TA know as soon as possible so we can get this resolved.
+                        Upon compiling and building the project, 
+                        running the executable should open a window 
+                        that displays the phrase “Welcome to CS1950U!”.
+                        If you do not see this, please let a TA know as soon 
+                        as possible so we can get this resolved.
                     </p>
                     <p className="mt-4">
                         Now let’s navigate through the support code:
@@ -173,17 +182,30 @@ const Assignment1 = ({ onOverlaySelect }) => {
 
                     <ol className="list-decimal ml-6 mt-4 space-y-4">
                         <li>
-                            Take a look at Engine/window.cpp. This file consists of the boiler plate which establishes a window, game loop, and various event handlers. The only function you will work with is Window::loop() briefly in this assignment.
+                            Take a look at Engine/window.cpp. 
+                            This file consists of the boiler plate which establishes a window, 
+                            game loop, and various event handlers. 
+                            The only function you will work with is Window::loop() 
+                            briefly in this assignment.
                         </li>
                         <li>
-                            Now navigate to Engine/core.cpp. In this file you will see a more empty template consisting of update, draw, and various event functions again stripped down for your convenience. This file is where the bulk of your code will stem from. In this assignment you will be writing directly in it, but soon you will be making abstractions which will minimize the amount of code that should be here!
+                            Now navigate to Engine/core.cpp. In this file you will 
+                            see a more empty template consisting of update, draw, 
+                            and various event functions again stripped down for your 
+                            convenience. This file is where the bulk of your code will stem from. 
+                            In this assignment you will be writing directly in it, 
+                            but soon you will be making abstractions which will minimize 
+                            the amount of code that should be here!
                         </li>
                         <li>
-                            Some other files you might want to overview include Graphics/graphics.h and or Graphics/graphics.cpp as well as Graphics/camera.h and Graphics/camera.cpp, though we will take a look at those in practice later in this tutorial.
+                            Some other files you might want to overview include Graphics/graphics.h 
+                            and or Graphics/graphics.cpp as well as Graphics/camera.h and 
+                            Graphics/camera.cpp, though we will take a look at those in 
+                            practice later in this tutorial.
                         </li>
                     </ol>
 
-                    {/* ---------------- STARTING PROJECT ---------------- */}
+                    {/* Starting Project */}
                     <h2 className="mt-10 text-[#b30000] text-3xl font-bold">Starting Your Project</h2>
 
                     <h3 className="mt-6 text-xl underline font-bold">
@@ -191,21 +213,41 @@ const Assignment1 = ({ onOverlaySelect }) => {
                     </h3>
 
                     <p className="mt-4">
-                        To begin on your journey, navigate to Engine/core.cpp’s draw() function and let’s first discuss what is necessary to draw a shape using the given stencil.
+                        To begin on your journey, navigate to Engine/core.cpp’s draw() 
+                        function and let’s first discuss what is necessary to draw a 
+                        shape using the given stencil.
                     </p>
                     <ol className="list-decimal ml-6 mt-4 space-y-4">
                         <li>
-                            The first function present here is what tells our computer to wipe clean any data it previously stored to represent the screen. Generally you will always want to make this call at the start of any given frame. You can use the operator | to indicate multiple “bits” you wish to clear as well. For example here we see GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT. Clearing GL_COLOR_BUFFER_BIT will result in the screen all the same color which is default set to black. You can change this default color by calling Global::graphics.setClearColor(glm::vec3 clearColor) where clearColor is a glm::vec3 of floating point values between 0 to 1 in each channel (R, G, and B). Clearing GL_DEPTH_BUFFER_BIT will ensure that you don’t see shapes overlap in the wrong order or in strange locations.
+                            The first function present here is what tells our computer to 
+                            wipe clean any data it previously stored to represent the screen.
+                            Generally you will always want to make this call at the start of 
+                            any given frame. You can use the operator | to indicate multiple 
+                            “bits” you wish to clear as well. For example here we see 
+                            GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT. 
+                            Clearing GL_COLOR_BUFFER_BIT will result in the screen all 
+                            the same color which is default set to black. 
+                            You can change this default color by calling Global::graphics.setClearColor(glm::vec3 clearColor) 
+                            where clearColor is a glm::vec3 of floating point values between 0 to 1 in each channel (R, G, and B). 
+                            Clearing GL_DEPTH_BUFFER_BIT will ensure that 
+                            you don’t see shapes overlap in the wrong order or in strange locations.
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    Before calling Global::graphics.clearScreen, try changing the clear color to whatever you like and see what happens when you run the program!
+                                    Before calling Global::graphics.clearScreen, 
+                                    try changing the clear color to whatever you like and 
+                                    see what happens when you run the program!
                                 </p>
                             </div>
                         </li>
 
                         <li>
-                            The next function you see is Global::graphics.bindShader(“text”) and is what determines how your input data will be displayed. For your convenience, we have pre-loaded 2 shader programs: “phong” and “text”. If you are drawing your 3d scene of shapes which you will do most often, you will want to bind the “phong” shader. If you are drawing a text overlay, then you will instead want to bind the “text” shader. You can also do both which we will do here.
+                            The next function you see is Global::graphics.bindShader(“text”) 
+                            and is what determines how your input data will be displayed. 
+                            For your convenience, we have pre-loaded 2 shader programs: “phong” and “text”. 
+                            If you are drawing your 3d scene of shapes which you will do most often, 
+                            you will want to bind the “phong” shader. If you are drawing a text overlay, 
+                            then you will instead want to bind the “text” shader. You can also do both which we will do here.
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
