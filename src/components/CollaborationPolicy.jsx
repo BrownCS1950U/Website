@@ -55,9 +55,6 @@ const CollaborationPolicy = () => {
                             </ul>
                         <li>
                             Post screenshots of your code in the class discord
-                        </li>
-                        <li>
-                            Post screenshots of your code in the class discord
                             <ul className="list-[circle] ml-6 mt-2 space-y-1">
                                 <li>
                                     We understand that there are some similarities that will occur between students as we teach certain game engine design principles, though if we suspect plagiarism is occuring, it will be brought to the professor’s notice and further discussion will be made following departmental policies.

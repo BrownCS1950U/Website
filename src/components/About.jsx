@@ -1,12 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // TODO: NEED TO FIX INDENTATION IN SOME PARTS OF THIS FILE
 
 const About = ({ showAbout, onSky, onHome, onOverlaySelect }) => {
-const creatureIndex1 = Math.floor(Math.random() * 10) + 1; 
-const creatureIndex2 = Math.floor(Math.random() * 10) + 1; 
-const creatureSrc1 = `/Website/creatures/${creatureIndex1}.gif`;
-const creatureSrc2 = `/Website/creatures/${creatureIndex2}.gif`;
+const creatureIndex = Math.floor(Math.random() * 10) + 1; 
+const creatureSrc = `/Website/creatures/${creatureIndex}.gif`;
   onSky(false);
   onHome(true);
   return (
@@ -21,13 +20,13 @@ const creatureSrc2 = `/Website/creatures/${creatureIndex2}.gif`;
             style={{ imageRendering: 'pixelated' }} >
             <h2 className="text-3xl md:text-4xl text-[#b30000] font-doom tracking-[-0.15em]">
               <img
-                src={creatureSrc1}
+                src={creatureSrc}
                 alt=""
                 className="w-20 h-20 object-contain inline-block" />
               3D Game Engines
 
               <img
-                src={creatureSrc2}
+                src={creatureSrc}
                 alt=""
                 className="w-20 h-20 object-contain inline-block"
               />
@@ -66,12 +65,13 @@ const creatureSrc2 = `/Website/creatures/${creatureIndex2}.gif`;
                   </div>
                 </div>
                 <hr className="my-2 border-t-2 border-[#b30000]" />
-                <div
-                  className="cursor-pointer"
-                // onClick={() => onOverlaySelect("Syllabus")}
-                >
-                  Syllabus
-                </div>
+                {/* <Link
+                  to="/syllabus"
+                  className="underline cursor-pointer"
+                  //className="hover-glow"
+                  style={{fontWeight: "bold" }}>
+                  {" "} Syllabus
+                </Link> */}
                 <div>
                   {/* <a target="_blank" className="underline" href="https://maps.app.goo.gl/1xfqYMQZHMA6Jadg9">Slack</a> */}
                 </div>

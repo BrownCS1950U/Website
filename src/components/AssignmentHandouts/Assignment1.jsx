@@ -24,7 +24,7 @@ const Assignment1 = ({ onOverlaySelect }) => {
                     </h1>
                     <p className="mt-2 font-bold">Due: 1/28/26 @ 3 PM</p>
 
-                    {/* ---------------- INTRODUCTION ---------------- */}
+                    {/* Introduction */}
                     <h2 className="mt-10 text-3xl text-[#b30000] font-bold">Introduction</h2>
                     <p className="mt-4">
                         Hi there and welcome to CS1950U! This assignment is designed to guide you through both setting up your local environment as well as the basics of using the support code. Before we begin, here are a few things to keep in mind:
@@ -32,13 +32,21 @@ const Assignment1 = ({ onOverlaySelect }) => {
 
                     <ul className="list-disc ml-6 mt-4 space-y-2">
                         <li>
-                            The TA staff encourages you to look at and play around with the support code. This tutorial will only use a few functions but feel free to explore various functions for yourself!
+                            The TA staff encourages you to look at and play around with the support code. 
+                            This tutorial will only use a few functions but feel free to explore various
+                             functions for yourself!
                         </li>
                         <li>
-                            You will be writing C++ code for the entire semester, which we do not explicitly teach other than weekly tips. If you have not written much C++ code before, we strongly recommend you to check out the CS1230 first lab and resources on C++ to get started.
+                            You will be writing C++ code for the entire semester, which we do not explicitly
+                             teach other than weekly tips. If you have not written much C++ code before,
+                              we strongly recommend you to check out the CS1230 first lab and resources
+                               on C++ to get started.
                         </li>
                         <li>
-                            In addition, while this course is NOT a course in computer graphics, it will still be helpful to understand the graphics pipeline and some basic OpenGL concepts if you wish to be fully fluent with the stencil code. A good introduction to OpenGL can be found here:{" "}
+                            In addition, while this course is NOT a course in computer graphics, 
+                            it will still be helpful to understand the graphics pipeline and some 
+                            basic OpenGL concepts if you wish to be fully fluent with the stencil 
+                            code. A good introduction to OpenGL can be found here:{" "}
                             <a
                                 href="https://open.gl/drawing"
                                 target="_blank"
@@ -51,86 +59,80 @@ const Assignment1 = ({ onOverlaySelect }) => {
                         </li>
                     </ul>
 
-                    {/* ---------------- COLLABORATION ---------------- */}
+                    {/* Collaboration Policy */}
                     <h2 className="mt-10 text-[#b30000] text-3xl font-bold">
                         Collaboration Policy & TA Hours Form!
                     </h2>
-
                     <p className="mt-4">
                         Before beginning this assignment, please read
-                        <Link
-                            to="/collaboration-policy"
-                            className="underline text-[#00ccff] cursor-pointer"
-                        >
-                            {" "} the collaboration policy
-                        </Link>
-                        {" "} and fill out the respective
-                        <a
-                            href="https://forms.gle/srYNPvRaBaquZ2pR9"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline text-[#00ccff]"
-                        >
-                            {" "} form
-                        </a>
-                        .
+                        the collaboration policy on the syllabus.
                     </p>
 
-
-                    {/* ---------------- DOWNLOADING ---------------- */}
-                    <h2 className="mt-10text-[#b30000] text-3xl font-bold">Downloading the Stencil</h2>
+                    {/* Downloading */}
+                    <h2 className="mt-10 text-[#b30000] text-3xl font-bold">Downloading the Stencil</h2>
                     <p className="mt-4">
                         To get the stencil, accept the GitHub Classroom assignment and{" "}
                         "git clone" the repository URL into a directory of your
                         choice.
                     </p>
 
-                    {/* ---------------- SETUP OPTIONS ---------------- */}
+                    {/* Settup Options */}
                     <h2 className="mt-10 text-[#b30000] text-3xl font-bold">
                         Setting Up Your Local Environment
                     </h2>
                     <p className="mt-4">
-                        The stencil for this course has been made to include any libraries explicitly within the “External” folder and has a provided CMakeLists.txt for you to use, so you don’t have to worry about installing additional libraries.
+                        The stencil for this course has been made to include any libraries 
+                        explicitly within the “External” folder and has a provided 
+                        CMakeLists.txt for you to use, so you don’t have to worry 
+                        about installing additional libraries.
                     </p>
                     <p className="mt-4">
-                        To develop locally, we suggest three options based on what you like best and/or have prior experience with: Qt Creator (IDE), CLion (IDE), or CMake GUI for those who wish to use their own IDE and build via command line.
+                        To develop locally, we suggest three options based on what you
+                         like best and/or have prior experience with: Qt Creator (IDE),
+                          CLion (IDE), or CMake GUI for those who wish to use their own IDE 
+                          and build via command line.
                     </p>
 
                     {/* ---------------- OPTION 1 ---------------- */}
                     <h2 className="mt-10 text-2xl font-bold">Option 1: Qt Creator Setup</h2>
                     <p className="mt-4">
-                        For installation and use of Qt Creator, we recommend following the entirety of Section 3 of Lab 1 from CS1230 linked
+                        For installation and use of Qt Creator, we recommend following the
+                         entirety of Section 3 of Lab 1 from CS1230 linked{" "}
                         <a
                             href="https://cs1230.graphics/labs/lab1/#qt-and-qt-creator"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="underline text-[#00ccff]"
                         >
-                            {" "}here{" "}
+                            here
                         </a>
-                        Note that because we do not use Qt in the stencil (just Qt Creator), you can skip the selection of Qt 6.5.2 in section 3.1. In section 3.3, open the CMakeLists.txt of the stencil repository.
+                        {" "}Note that because we do not use Qt in the stencil (just Qt Creator),
+                         you can skip the selection of Qt 6.5.2 in section 3.1. In section 3.3,
+                         open the CMakeLists.txt of the stencil repository.
                     </p>
 
                     {/* ---------------- OPTION 2 ---------------- */}
                     <h2 className="mt-10 text-2xl font-bold">Option 2: CLion Setup</h2>
                     <p className="mt-4">
-                        Download and install CLion
+                        Download and install CLion{" "}
                         <a
                             href="https://www.jetbrains.com/clion/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="underline text-[#00ccff]"
                         >
-                            {" "}here{" "}
+                            here
                         </a>
-                        (you’re eligible for a free educational license with your school email). After installation:
+                        {" "}(you’re eligible for a free educational license with your school email).
+                        After installation:
                     </p>
                     <ul className="list-disc ml-6 mt-4 space-y-2">
                         <li>
                             Open the Project:
                             <ul className="list-[circle] ml-6 mt-2 space-y-1">
                                 <li>
-                                    Launch CLion, click Open, and select the directory of the CS1950UStencil folder you just cloned.
+                                    Launch CLion, click Open, and select the directory of the
+                                    CS1950UStencil folder you just cloned.
                                 </li>
                                 <li>Click Trust Project to load it.</li>
                             </ul>
@@ -159,69 +161,6 @@ const Assignment1 = ({ onOverlaySelect }) => {
                             className="w-full rounded-md border border-[#444] mt-6"
                         />
                     </div>
-
-                    {/* ---------------- OPTION 3 ---------------- */}
-                    <h2 className="mt-10 text-2xl font-bold">Option 3: CMake GUI Setup</h2>
-                    <p className="mt-4">
-                        You can begin by installing CMake here. Once you install, you should have an application called CMake (cmake-gui) which is a GUI based application used to generate make files. It should look something like this upon opening:
-                    </p>
-
-                    <div className="mt-6 p-4 rounded text-center italic">
-                        <img
-                            src="/Website/AssignmentImages/Setup2.png"
-                            alt="description"
-                            className="w-full rounded-md border border-[#444] mt-6"
-                        />
-                    </div>
-
-                    <p className="mt-4">
-                        In order to create your make files, first click the “Browse Source” button (top-most green box) and select the stencil repository directory (in particular, make sure that this is the directory that contains the CMakeLists.txt file).
-                    </p>
-
-                    <p className="mt-4">
-                        Next, click the “Browse Build” button (middle green box). This will prompt you to select a build directory. We recommend that you create a new directory called “cs1950u-[username]-build” before doing this, and then selecting this as the build directory. Once this is done you can configure any environment variables you have by checking or unchecking the checkboxes though you most likely will not need to do this.
-                    </p>
-
-                    <p className="mt-4">
-                        Once you are done, click the “Configure” button (bottom-most box). You will be prompted to select a generator. If you’re on Windows, select “MinGW Makefiles”, and if you’re on Mac, select “Unix Makefiles”. Ignore the other options and press “Done”.
-                    </p>
-
-                    <br />
-
-                    <div className="border p-4 border-white">
-                        <h3 className="mt-6 text-xl underline font-bold">
-                            IMPORTANT Extra Step for Apple Silicon (arm64) macs:
-                        </h3>
-                        <p className="mt-2">
-                            Before clicking “Generate”, click on “CMAKE_OSX_ARCHITECTURES” in the table of red entries. An empty text box will appear on the right. Enter “x86_64” (without the quotes) into the text box. If you don’t do this, the stencil will fail to build!
-                        </p>
-                    </div>
-
-                    <p className="mt-4">
-                        The last step in the CMake GUI is to click on the “Generate” button (bottom-most box) to generate the build files.
-                    </p>
-
-                    <p className="mt-4">
-                        To use the makefiles in order to actually build the project, you will need to navigate to your build directory via command line and type the following command: “cmake -- build .” (Note the two dashes and the period!). This will attempt to create an executable for you and give you any compilation errors as it does so. If this succeeds you should have generated an executable titled “CS1950UEngine.exe” (or just “CS1950UEngine” if you’re on Mac), which you can run from the command line to run the project.
-                    </p>
-
-                    <br />
-
-                    <div className="border p-4 border-white">
-                        <h3 className="mt-6 text-xl underline font-bold">
-                            When do I need to use the CMake GUI and when do I need to build the project?
-                        </h3>
-                        <p className="mt-2">
-                            You will not need to open the CMake GUI ever again unless you edit the CMakeLists.txt file in a way that adds new configuration values (namely, you won’t have to open the GUI after adding a file to the “add_executable” block as described below). This is because when you call “cmake -- build .”, the CMakeGUI takes your CMakeLists.txt and converts it into a traditional makefile behind the scenes.
-                        </p>
-                        You will need to rebuild the project whenever you change your code. If your build times are fast, you can build and run with one command by chaining the commands together with a semicolon: “cmake --build .; ./CS1950UEngine”. However, as your engine grows in complexity your build times will become slower, so this won’t always be desirable.
-                        <p className="mt-2"></p>
-                    </div>
-
-                    <h2 className="mt-10 text-2xl font-bold">For All Options: How to Edit CMakeLists.txt</h2>
-                    <p className="mt-4">
-                        Whenever you generate a file and want it to be included in your project, you must navigate to the base level CMakeLists.txt of your project and type in your file’s relative path from the project directory inside the “add_executable” command block (you’ll notice that we’ve already placed all the files that come with the stencil, such as “Engine/core.h”, in this block). This is necessary for the file to be included in the build, and in Qt Creator, this should make the file visible in the project view.
-                    </p>
 
                     {/* ---------------- EXPLORING STENCIL ---------------- */}
                     <h2 className="mt-10 text-[#b30000] text-3xl font-bold">Exploring the Stencil</h2>
