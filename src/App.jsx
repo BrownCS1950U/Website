@@ -9,6 +9,8 @@ import AssignmentPage4 from "./components/AssignmentHandouts/Assignment4";
 import AssignmentPage5 from "./components/AssignmentHandouts/Assignment5";
 import AssignmentPage6 from "./components/AssignmentHandouts/Assignment6";
 
+import LabPage1 from "./components/LabHandouts/Lab1";
+
 import CollaborationPolicy from "./components/CollaborationPolicy";
 import Syllabus from "./components/Syllabus";
 
@@ -86,6 +88,8 @@ const App = () => {
           <Route path="/assignment4" element={<AssignmentPage4 />} />
           <Route path="/assignment5" element={<AssignmentPage5 />} />
           <Route path="/assignment6" element={<AssignmentPage6 />} />
+
+          <Route path="/lab1" element={<LabPage1 />} />
 
           <Route path="/collaboration-policy" element={<CollaborationPolicy />} />
           <Route path="/syllabus" element={<Syllabus />} />
