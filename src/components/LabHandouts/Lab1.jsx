@@ -52,7 +52,7 @@ const Lab1 = () => {
                     {/* FIGURE 1 */}
                     <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-1.png"
+                            src="/Website/LabImages/lab1-1.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -68,7 +68,7 @@ const Lab1 = () => {
                     {/* FIGURE 2 */}
                     <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-2.png"
+                            src="/Website/LabImages/lab1-2.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -135,7 +135,7 @@ const Lab1 = () => {
 
                     <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-3.png"
+                            src="/Website/LabImages/lab1-3.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -179,7 +179,7 @@ const Lab1 = () => {
 
                     <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-4.png"
+                            src="/Website/LabImages/lab1-4.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -192,7 +192,7 @@ const Lab1 = () => {
 
                     <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-5.png"
+                            src="/Website/LabImages/lab1-5.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -212,7 +212,7 @@ const Lab1 = () => {
                         </p>
                         <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-6.png"
+                            src="/Website/LabImages/lab1-6.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -231,7 +231,7 @@ const Lab1 = () => {
 
                     <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-7.png"
+                            src="/Website/LabImages/lab1-7.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -249,7 +249,7 @@ const Lab1 = () => {
 
                     <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-8.png"
+                            src="/Website/LabImages/lab1-8.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -262,7 +262,7 @@ const Lab1 = () => {
 
                     <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-9.png"
+                            src="/Website/LabImages/lab1-9.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -293,7 +293,7 @@ const Lab1 = () => {
                         </p>
                         <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-10.png"
+                            src="/Website/LabImages/lab1-10.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
@@ -308,7 +308,7 @@ const Lab1 = () => {
                     {/* FIGURE 6 */}
                     <div className="mt-6">
                         <img
-                            src="/LabImages/lab1-11.png"
+                            src="/Website/LabImages/lab1-11.png"
                             alt="figure"
                             className="w-full rounded bg-gray-800"
                         />
