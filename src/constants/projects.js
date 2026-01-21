@@ -1,9 +1,9 @@
 export const projects = [
     {
-      project: "Warmup",
+      project: "Setup",
       checkpoint: "Setup Tutorial",
       dateDue: "1/28",
-      link: "",
+      link: "", // TODO add assignment1
     },
     {
       project: "Warmup 1",
