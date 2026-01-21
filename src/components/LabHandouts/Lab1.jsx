@@ -26,12 +26,12 @@ const Lab1 = () => {
 
                     <p className="mt-4">
                         This is your very first lab for CS1950U! Please read through the handout and 
-                        complete the excercises within the red boxes. You are not required to spend a 
+                        complete the tasks within the red boxes. You are not required to spend a 
                         huge amount of time writing out long answers. Just please be prepared to briefly
                         discuss a question or two, or show some evidence of your participation. 
                     </p>
                     <p className="mt-4">
-                        The main goal of this lab is to introduce you to some of the specifics of workinging
+                        The main goal of this lab is to introduce you to some of the specifics of working
                         in C++ 
                     </p>
 
