@@ -25,14 +25,14 @@ const Lab1 = () => {
                     <br></br>
 
                     <p className="mt-4">
-                        This is your very first lab for CS1950U! Please read through the handout and 
-                        complete the tasks within the red boxes. You are not required to spend a 
+                        This is your very first lab for CS1950U! Please read through the handout and
+                        complete the tasks within the red boxes. You are not required to spend a
                         huge amount of time writing out long answers. Just please be prepared to briefly
-                        discuss a question or two, or show some evidence of your participation. 
+                        discuss a question or two, or show some evidence of your participation.
                     </p>
                     <p className="mt-4">
                         The main goal of this lab is to introduce you to some of the specifics of working
-                        in C++ 
+                        in C++
                     </p>
 
                     {/* ===================== SECTION: Memory Allocation ===================== */}
@@ -44,8 +44,8 @@ const Lab1 = () => {
                         In C++, objects can be allocated on <strong>heap</strong>heap or <strong>stack</strong>.
                         Objects on stack are automatically managed by the system,
                         meaning they are <strong>created when the function begins and
-                        destroyed when they go out of scope.</strong> This makes stack 
-                        allocation efficient but limits object lifetime to the 
+                        destroyed when they go out of scope.</strong> This makes stack
+                        allocation efficient but limits object lifetime to the
                         function's execution.
                     </p>
 
@@ -59,9 +59,9 @@ const Lab1 = () => {
                     </div>
 
                     <p className="mt-4">
-                        Heap memory gives more flexibility because it allows 
-                        dynamic allocation, meaning objects <strong>can exist beyond 
-                        the scope of a function.</strong> However, it also requires 
+                        Heap memory gives more flexibility because it allows
+                        dynamic allocation, meaning objects <strong>can exist beyond
+                        the scope of a function.</strong> However, it also requires
                         programmers to manually allocate and deallocate memory.
                     </p>
 
@@ -75,11 +75,11 @@ const Lab1 = () => {
                     </div>
 
                     <p className="mt-4">
-                        ⚠️ Be careful with your choice of memory allocation method! 
-                        If you rely too much on dynamic allocation, you may end up 
-                        with a game that needs to fetch game objects every time and 
-                        have a lot of cache misses, resulting in slower update and 
-                        draw calls. 
+                        ⚠️ Be careful with your choice of memory allocation method!
+                        If you rely too much on dynamic allocation, you may end up
+                        with a game that needs to fetch game objects every time and
+                        have a lot of cache misses, resulting in slower update and
+                        draw calls.
                     </p>
                     <br></br>
 
@@ -129,7 +129,7 @@ const Lab1 = () => {
                     </h2>
 
                     <p className="mt-4">
-                        If you decide to use raw pointers to create objects, 
+                        If you decide to use raw pointers to create objects,
                         you're also responsible for deallocating them to avoid memory leaks.
                     </p>
 
@@ -142,8 +142,8 @@ const Lab1 = () => {
                     </div>
 
                     <p className="mt-4">
-                        Having to free up all dynamically allocated memory can be 
-                        a hassle and make your code error-prone. This is where smart 
+                        Having to free up all dynamically allocated memory can be
+                        a hassle and make your code error-prone. This is where smart
                         pointers can be helpful.
                     </p>
                     <br></br>
@@ -171,7 +171,7 @@ const Lab1 = () => {
 
                     <h2 className="mt-10 text-3xl text-[#b30000] font-bold">
                         Creating Smart Pointers
-                    </h2>               
+                    </h2>
 
                     <p className="mt-4">
                         A rudimentary way to create a smart pointer is by passing a raw pointer to it.
@@ -186,7 +186,7 @@ const Lab1 = () => {
                     </div>
 
                     <p className="mt-4">
-                        But the recommended way to instantiate objects with smart pointers is 
+                        But the recommended way to instantiate objects with smart pointers is
                         by using make functions because they are considered safer and more efficient.
                     </p>
 
@@ -207,8 +207,8 @@ const Lab1 = () => {
                     <div className="border p-2 border-[#b30000]">
                                 <h3 className="mt-6 text-xl underline font-bold">Task 3</h3>
                         <p className="mt-4">
-                            In the stencil code we used unique_ptr for the window of the application. 
-                            Do you think it's a good choice and why?
+                            Here is an example "game" main function. Do you think the use of unique_ptr is a good choice here?
+                            Why or why not?
                         </p>
                         <div className="mt-6">
                         <img
@@ -282,13 +282,13 @@ const Lab1 = () => {
                         A good example of an abstract class is Screen class. A screen isn’t meaningful if it can’t draw itself, so we make the draw() function pure virtual. This ensures that every type of screen must define how it draws.
                     </p>
                     <br></br>
-                    
+
 
                     {/* ===================== TASK 4 ===================== */}
                     <div className="border p-2 border-[#b30000]">
                                 <h3 className="mt-6 text-xl underline font-bold">Task 4</h3>
                         <p className="mt-4">
-                            Is it ok to override a non-virtual function? If so, what is the 
+                            Is it ok to override a non-virtual function? If so, what is the
                             output of the following code?
                         </p>
                         <div className="mt-6">
@@ -315,8 +315,8 @@ const Lab1 = () => {
                     </div>
 
                     <p className="mt-4">
-                        The diagram above is a sample hierarchy for Warmup 1. 
-                        You can expect a lot of time spent on refactoring as you experiment 
+                        The diagram above is a sample hierarchy for Warmup 1.
+                        You can expect a lot of time spent on refactoring as you experiment
                         with different levels of abstraction that fits your design.
                     </p>
                     <br></br>
@@ -324,13 +324,9 @@ const Lab1 = () => {
                     {/* ===================== TASK 5 ===================== */}
                     <div className="border p-2 border-[#b30000]">
                                 <h3 className="mt-6 text-xl underline font-bold">Task 5</h3>
-                        <p className="mt-4">
-                            Is it ok to override a non-virtual function? If so, what is the 
-                            output of the following code?
-                        </p>
                         <ol className="list-decimal ml-6 mt-4 space-y-2">
-                        <li>How to propagate update(), draw(), and relevant event calls in Core to your game?</li>
-                        <li>What container would you use to store Screens, and how do you specify which screen to show?</li>
+                        <li>How to propagate update(), draw(), and relevant event calls in Window to your game?</li>
+                        <li>What structure/container would you use to store Screens, and how do you specify which screen to show?</li>
                     </ol>
                     </div>
 
