@@ -2,7 +2,7 @@ export const labs = [
   {
     topic: "C++ Introduction",
     date: "2/4",
-    slides: ""
+    slides: "lab1"
   },
   {
     topic: "Lab 2",
