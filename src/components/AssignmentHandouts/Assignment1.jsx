@@ -41,12 +41,12 @@ const Assignment1 = ({onOverlaySelect}) => {
                         </li>
                         <li>
                             You will be writing C++ code for the entire semester, which we do not explicitly
-                            teach other than weekly tips. If you have not written much C++ code before,
-                            we strongly recommend you to check out the CS1230 first lab and resources
+                            teach other than occasional tips. If you have not written much C++ code before,
+                            we strongly recommend you to check out Lab1, the CS1230 first lab and resources
                             on C++ to get started.
                         </li>
                         <li>
-                            In addition, while this course is NOT a course in computer graphics,
+                            In addition, while this course is NOT necessarily a course in computer graphics,
                             it will still be helpful to understand the graphics pipeline and some
                             basic OpenGL concepts if you wish to be fully fluent with the stencil
                             code. A good introduction to OpenGL can be found here:{" "}
@@ -74,21 +74,30 @@ const Assignment1 = ({onOverlaySelect}) => {
                     {/* Downloading */}
                     <h2 className="mt-10 text-[#b30000] text-3xl font-bold">Downloading the Stencil</h2>
                     <p className="mt-4">
-                        To get the stencil, accept the GitHub Classroom assignment and{" "} {/* todo link */}
-                        "git clone" the repository URL into a directory of your
-                        choice.
+                        To get the stencil, accept the {" "}
+                         <a
+                            href="https://classroom.github.com/a/xHXFiteA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline text-[#00ccff]"
+                        >
+                            GitHub Classroom assignment
+                        </a>
+                        {" "} and
+                        "git clone" the repository URL into a directory of your choice.
+                    </p>
+
+                    <p className="mt-4">
+                        The stencil for this course has been made to include some basic external libraries explicitly within the
+                        “Dependencies” folder and has a provided CMakeLists.txt for you to use. 
+                        Feel free to add any additional libraries you would like to use in your code.
+
                     </p>
 
                     {/* Setup Options */}
                     <h2 className="mt-10 text-[#b30000] text-3xl font-bold">
                         Setting Up Your Local Environment
                     </h2>
-                    <p className="mt-4">
-                        The stencil for this course has been made to include any libraries explicitly within the
-                        “dependencies” folder and has a provided CMakeLists.txt for you to use, so you don’t have to
-                        worry about installing additional libraries.
-
-                    </p>
                     <p className="mt-4">
                         To develop locally, we suggest using CLion (IDE), or Qt Creator (IDE)
                     </p>
@@ -108,8 +117,7 @@ const Assignment1 = ({onOverlaySelect}) => {
                         >
                             here
                         </a>
-                        {" "}(you’re eligible for a free educational license with your school
-                        email).
+                        {" "}
                         After installation:
                     </p>
                     <ul className="list-disc ml-6 mt-4 space-y-2">
@@ -117,8 +125,9 @@ const Assignment1 = ({onOverlaySelect}) => {
                             Open the Project:
                             <ul className="list-[circle] ml-6 mt-2 space-y-1">
                                 <li>
-                                    Launch CLion, click Open, and select the directory of the
-                                    CS1950UStencil folder you just cloned.
+                                    Launch CLion, click Open, and navigate to the directory 
+                                    CS1950U Stencil folder you just cloned
+                                    and select the top-level CMakeLists.txt file.
                                 </li>
                                 <li>Click Trust Project to load it.</li>
                             </ul>
@@ -165,9 +174,22 @@ const Assignment1 = ({onOverlaySelect}) => {
                         >
                             here
                         </a>
-                        {" "}Note that because we do not use Qt in the stencil (just Qt Creator),
-                        you can skip the selection of Qt 6.5.2 in section 3.1. In section 3.3,
-                        open the CMakeLists.txt of the stencil repository.
+                        {" "}Note that because we do not use any Qt libraries in the stencil (just Qt Creator),
+                        you can skip the selection of Qt 6.5.2 in section 3.1. Navigate to the directory 
+                        CS1950U Stencil folder you just cloned
+                        and select the top-level CMakeLists.txt file.
+                    </p>
+
+                    {/* How to Edit CMakeLists.txt */}
+                    <h2 className="mt-10 text-[#b30000] text-3xl font-bold">For All Options: How to Edit CMakeLists.txt</h2>
+                    <p className="mt-4">
+                        Whenever you generate a file and want it to be included in your project, 
+                        you must navigate to the appropriate CMakeLists.txt of your engine or game 
+                        and type in your file’s relative path from the project directory inside 
+                        the “add_executable” command block (you’ll notice that we’ve already 
+                        placed all the files that come with the stencil, such as “Games/basic.cpp”, 
+                        in this block). This is necessary for the file to be included in the build, 
+                        and in Qt Creator, this should make the file visible in the project view. 
                     </p>
 
 
@@ -186,21 +208,25 @@ const Assignment1 = ({onOverlaySelect}) => {
 
                     <ol className="list-decimal ml-6 mt-4 space-y-4">
                         <li>
-                            Read through the README file found in the src/ directory. This will give you a general
+                            Read through the README file found in the Engine/ directory. This will give you a general
                             overview of the stencil and its functions. You can also refer back at any time.
                         </li>
                         <li>
-                            For this project, take a look at Window.cpp. This file consists of the boiler plate which
+                            For this project, take a look at Engine/Src/Window.cpp. This file consists of the boiler plate which
                             establishes a
                             window, game loop, and various event handlers. The only function you will work with is
                             Window::update() briefly in this assignment.
                         </li>
                         <li>
-                            Now navigate to engine/Core.cpp. In this file you will see a more empty template consisting
-                            of update, draw, and various event functions again stripped down for your convenience. This
-                            file is where the bulk of your code will stem from. In this assignment you will be writing
-                            directly in it, but soon you will be making abstractions which will minimize the amount of
-                            code that should be here!
+                            ⭐️ HINT: The majority of changes that you will be making for this assignment will be in the game itself, 
+                            rather than the Engine. However, you will still need to figure out how to connect your game to your engine!
+                        </li>
+                        <li>
+                            Now navigate to Games/basic.cpp. In this file you will see a more empty template 
+                            consisting of update, draw, and various event functions again stripped down for 
+                            your convenience. This file represents an instance of the Game class, which can be found in Engine/include/Engine/game.h.
+                            In this assignment you will be writing directly in this file, but soon you will be 
+                            making abstractions which will minimize the amount of code that should be here!
                         </li>
 
                     </ol>
@@ -213,7 +239,7 @@ const Assignment1 = ({onOverlaySelect}) => {
                     </h3>
 
                     <p className="mt-4">
-                        To begin on your journey, navigate to engine/Core.cpp’s draw()
+                        To begin on your journey, navigate to Games/basic.cpp’s draw()
                         function and let’s first discuss what is necessary to draw a
                         shape using the given stencil.
                     </p>
@@ -229,7 +255,7 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    Change the clear color of gl::Graphics::clearScreen in Core::draw() to whatever you
+                                    Change the clear color of gl::Graphics::clearScreen in BasicGame::draw() to whatever you
                                     like and see what happens when you run the program!
                                 </p>
                             </div>
@@ -288,7 +314,7 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                             <p className="mt-2">
                                 In order to set camera data, we need to create a camera object. To do so, navigate to
-                                engine/Core.h. Currently there are only public member functions. Let’s add a private
+                                Games/basic.h. Currently there are only public member functions. Let’s add a private
                                 section by typing the keyword private: on a new line after the resizeWindowEvent
                                 function declaration.
                             </p>
@@ -297,11 +323,11 @@ const Assignment1 = ({onOverlaySelect}) => {
                                 whatever name you wish.
                             </p>
                             <p className="mt-2">
-                                Now in the constructor for Core, use an initializer list to instantiate your camera
+                                Now in the constructor for BasicGame, use an initializer list to instantiate your camera
                                 object with no input parameters. Use std::make_unique{"<"}Camera{">"}() to do so.
                             </p>
                             <p className="mt-2">
-                                Once we have done this, within Core::draw immediately after setting the global data, we
+                                Once we have done this, within BasicGame::draw immediately after setting the global data, we
                                 can finally call gl::Graphics::setCameraUniforms with our private
                                 std::unique_ptr{"<"}Camera{">"} object we just created. Use the .get() function to get
                                 a raw pointer to pass into the function.
@@ -315,13 +341,13 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    To store a Shape within the Core class, declare a private
-                                    DrawShape* (pointer) of whatever name you wish within engine/Core.h. This is a raw
+                                    To store a Shape within the BasicGame class, declare a private
+                                    DrawShape* (pointer) of whatever name you wish within Games/basic.h. This is a raw
                                     pointer since the Mesh class stores the shapes as unique pointers internally and we
                                     are merely referencing them.
                                 </p>
                                 <p className="mt-2">
-                                    Now in the constructor for Core, set your shape variable using
+                                    Now in the constructor for BasicGame, set your shape variable using
                                     gl::Mesh::getShape(std::string shapeName) and input any one of the 5 default shapes
                                     in lowercase.
                                 </p>
@@ -334,12 +360,12 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    To store a Transform within the Core class, declare a private
+                                    To store a Transform within the BasicGame class, declare a private
                                     Transform of whatever name you wish within
-                                    Engine/core.h.
+                                    Games/basic.h.
                                 </p>
                                 <p className="mt-2">
-                                    Now in the constructor for Core, use the initializer list to instantiate your
+                                    Now in the constructor for BasicGame, use the initializer list to instantiate your
                                     Transform object with no input parameters.
                                 </p>
                             </div>
@@ -351,7 +377,7 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    In Core:::draw, after setting the camera uniform, call gl::Graphics::drawObject and
+                                    In BasicGame::draw, after setting the camera uniform, call gl::Graphics::drawObject and
                                     input your shape first followed by your model transform second.
                                 </p>
                             </div>
@@ -363,7 +389,7 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    In the constructor for core, try using the translate, rotate, and scale functions of
+                                    In the constructor for BasicGame, try using the translate, rotate, and scale functions of
                                     Transform to get the shape to appear on screen! Keep in mind (0, 1, 0) is the
                                     up direction, the camera is located at (0, 0, 0) and is looking in the direction (0,
                                     0, 1) by default.
@@ -378,7 +404,7 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    Finally declare a DrawMaterial instance with whatever name you wish in Core.h. In
+                                    Finally declare a DrawMaterial instance with whatever name you wish in basic.cpp. In
                                     the constructor, you can set its .texture value by using gl::Material::loadTexture
                                     with “resources/images/grass.png” as the diffuse path. You also may want to
                                     experiment with other values, such as the ambient color.
@@ -397,18 +423,18 @@ const Assignment1 = ({onOverlaySelect}) => {
                             Typically to control a camera in many games we use the WASD keys. When you press W, the
                             character should move forwards, S backwards, D to the right, and A to the left. Later on,
                             you will be asked to implement a more robust version of an input handler, but for now, let's
-                            store some key states within our Core class.
+                            store some key states within our BasicGame class.
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    Within engine/Core.h, declare a std::unordered_map{"<"}int, bool{">"} which will
+                                    Within Games/basic.h, declare a std::unordered_map{"<"}int, bool{">"} which will
                                     represent the key state of any given key.
                                 </p>
                             </div>
                         </li>
 
                         <li>
-                            To update key states, we will want to use the Core::keyEvent function. There are two inputs
+                            To update key states, we will want to use the BasicGame::keyEvent function. There are two inputs
                             to this function, the key, and the action, both of which are formatted as integers. However,
                             these integers merely map to enumerations given by the GLFW library. For example, the W key
                             is referred to by the integer enumerated by GLFW_KEY_W. There are 2 actions you will care
@@ -416,7 +442,7 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    Using these enumerations, within the Core::keyEvent function update your key state
+                                    Using these enumerations, within the BasicGame::keyEvent function update your key state
                                     booleans appropriately.
                                 </p>
                             </div>
@@ -478,17 +504,17 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    To keep track of the mouse button and previous mouse position, within engine/Core.h
+                                    To keep track of the mouse button and previous mouse position, within Games/basic.h
                                     create a private boolean for the right mouse button and a private glm::vec2 for the
                                     previous mouse position.
                                 </p>
                                 <p className="mt-2">
-                                    Within Core::mouseButtonEvent, use the enumeration GLFW_MOUSE_BUTTON_RIGHT and the
+                                    Within BasicGame::mouseButtonEvent, use the enumeration GLFW_MOUSE_BUTTON_RIGHT and the
                                     same enumerations as the key events GLFW_PRESS and GLFW_RELEASE to update your
                                     boolean for the right mouse button state.
                                 </p>
                                 <p className="mt-2">
-                                    Within Core::mousePositionEvent, if the right mouse button is pressed, calculate the
+                                    Within BasicGame::mousePositionEvent, if the right mouse button is pressed, calculate the
                                     change of the new input x and y positions. Then think about how you can use these
                                     changes to rotate the camera appropriately. Consider adding an x and y rotation
                                     angle in the camera class which you update based on the mouse movement deltas. Then
@@ -504,7 +530,7 @@ const Assignment1 = ({onOverlaySelect}) => {
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
-                                    Within Core::windowResizeEvent, call Camera::setAspectRatio() with the new aspect
+                                    Within BasicGame::windowResizeEvent, call Camera::setAspectRatio() with the new aspect
                                     ratio. You can also call the static method Window::getAspectRatio() from anywhere to
                                     get the current aspect ratio of the screen.
                                 </p>
@@ -521,14 +547,14 @@ const Assignment1 = ({onOverlaySelect}) => {
                                 <p className="mt-2">
                                     Within the Window::update method before display(), calculate delta_time by using the
                                     static local variables s_current_time and s_last_time, and then pass delta_time as
-                                    an input to the update function of Core.
+                                    an input to the update function of BasicGame.
                                 </p>
                             </div>
                         </li>
 
                         <li>
                             Now we can utilize this information on time to make the movement speed consistent within
-                            Core::update.
+                            BasicGame::update.
                             <div className="border p-2 border-white">
                                 <h3 className="mt-6 text-xl underline font-bold">Try:</h3>
                                 <p className="mt-2">
