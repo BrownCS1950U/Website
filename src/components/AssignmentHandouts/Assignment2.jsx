@@ -123,10 +123,9 @@ const Assignment2 = () => {
                           </li>
                           <li>
                             Standard WASD keyboard controls (W: forwards, S: backwards, A: strafes left, D: strafes right) change the position of the camera
-
                           </li>
                           <li>
-                            The scroll wheel determines the distance of the camera from the player with the minimum distance being capped at 0
+                            Feel free to take some creative/artistic freedom with how you decide to implement your 3rd person perspective.
                           </li>
                         </ul>
                       </li>

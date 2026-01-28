@@ -9,7 +9,7 @@ export const projects = [
       project: "Warmup 1",
       checkpoint: "Basic Engine Architecture",
       dateDue: "2/4",
-      link: "",
+      link: "/assignment2",
     },
     {
       project: "Warmup 2",
