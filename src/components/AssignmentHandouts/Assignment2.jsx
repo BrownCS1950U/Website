@@ -105,7 +105,7 @@ const Assignment2 = () => {
 
                     <h2 className="mt-10 text-3xl text-[#b30000] font-bold">Game Requirements</h2>
                     <p className="mt-4">
-                      For this week, you are not required to implement any real gameplay, but feel free to have some fun with the functionality you create! Your handin should allow the player to walk around a world using mouse and keyboard inputs to change the camera. The player will be able to jump and not fall through a textured floor, but there will be no “point” to the game.
+                      For this week, you are not required to implement any real gameplay, but feel free to have some fun with the functionality you create! Your handin should allow the player to walk around a world using mouse and keyboard inputs to change the camera. The player will be able to jump and not fall through a textured floor, but there does not have to be a “point” to the game.
                     </p>
                     <p className="mt-4">
                       Your game must fulfill the following set of requirements:
@@ -122,7 +122,7 @@ const Assignment2 = () => {
                             Vertical mouse movements change the pitch of the camera
                           </li>
                           <li>
-                            Standard WASD keyboard controls (W: forwards, S: backwards, A: strafes left, D: strafes right) change the position of the camera
+                            Standard WASD keyboard controls (W: forwards, S: backwards, A: strafes left, D: strafes right)
                           </li>
                           <li>
                             Feel free to take some creative/artistic freedom with how you decide to implement your 3rd person perspective.
@@ -136,7 +136,7 @@ const Assignment2 = () => {
                         The player must be able to jump off the ground using the spacebar or a mouse button
                       </li>
                       <li>
-                        The player can only jump when on the ground
+                        The player can only jump when on the ground (or you can implement an intentional double/tripple jump)
                       </li>
                       <li>
                         Gravity must act downwards on the player
