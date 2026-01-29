@@ -79,7 +79,7 @@ const Assignment2 = () => {
                         </ul>
                       </li>
                       <li>
-                        Abstract Screen class representing a logical sunscreen of a game which supports:
+                        Abstract Screen class representing a logical screen of a game which supports:
                         <ul className="list-[circle] ml-6 mt-2 space-y-1">
                           <li>
                             Timed updates (update)
