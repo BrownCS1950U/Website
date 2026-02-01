@@ -85,7 +85,7 @@ const Lab2 = () => {
                     </div>
 
                     <p className="mt-4">
-                        Let's say we wan't to debug the drawing of a particular object (let's use the "C" object
+                        Let's say we want to debug the drawing of a particular object (let's use the "C" object
                         in this scene). We can find the draw call that corresponds to this object in the
                         Event Browser.
                     </p>
