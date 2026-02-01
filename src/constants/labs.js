@@ -5,9 +5,9 @@ export const labs = [
     slides: "lab1"
   },
   {
-    topic: "Lab 2 - Debugger / ImGui",
+    topic: "Lab 2 - RenderDoc / ImGui",
     date: "2/11",
-    slides: ""
+    slides: "lab2"
   },
   {
     topic: "Lab 3 - Collision Debugger",

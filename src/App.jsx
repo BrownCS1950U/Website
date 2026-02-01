@@ -10,12 +10,16 @@ import AssignmentPage5 from "./components/AssignmentHandouts/Assignment5";
 import AssignmentPage6 from "./components/AssignmentHandouts/Assignment6";
 
 import LabPage1 from "./components/LabHandouts/Lab1";
+import LabPage2 from "./components/LabHandouts/Lab2";
+
 
 import CollaborationPolicy from "./components/CollaborationPolicy";
 import Syllabus from "./components/Syllabus";
 
 // NEW GLOBAL BACKGROUND
 import CyclingTextureBackground from "./components/CyclingTextureBackground";
+
+import RenderDocMacos from "./components/RenderDocMacos";
 
 const App = () => {
   const location = useLocation();
@@ -90,6 +94,7 @@ const App = () => {
           <Route path="/assignment6" element={<AssignmentPage6 />} />
 
           <Route path="/lab1" element={<LabPage1 />} />
+          <Route path="/lab2" element={<LabPage2 />} />
 
           <Route path="/collaboration-policy" element={<CollaborationPolicy />} />
           <Route path="/syllabus" element={<Syllabus />} />
@@ -98,6 +103,7 @@ const App = () => {
           <Route path="/assignments" element={<Assignments />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/labs" element={<Labs />} />
+          <Route path="/renderdoc-macos" element={<RenderDocMacos />} />
         </Routes>
       </div>
     </div>
