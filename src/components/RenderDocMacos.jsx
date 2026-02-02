@@ -33,7 +33,15 @@ const RenderDocMacos = () => {
             <li>Xcode Command Line Tools</li>
             <li>Homebrew</li>
           </ul>
-
+          <h2 className="mt-10 text-[#b30000] text-3xl font-bold">
+            Clone RenderDoc
+          </h2>
+            <pre className="mt-4 bg-black/80 p-4 rounded-md overflow-x-auto">
+                <code>{
+                    `git clone https://github.com/baldurk/renderdoc.git
+cd renderdoc`
+                }</code>
+            </pre>
           <h2 className="mt-10 text-[#b30000] text-3xl font-bold">
             Install Dependencies
           </h2>
