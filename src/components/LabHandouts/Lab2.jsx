@@ -159,7 +159,7 @@ const Lab2 = () => {
                     <div className="border p-2 border-[#b30000]">
                         <h3 className="mt-6 text-xl underline font-bold">Task 2</h3>
                         <p className="mt-4">
-                            Accept this <a href="https://classroom.github.com/a/3oX1YJ8E" className="underline text-[#00ccff]">GitHub Classroom assignment</a>.
+                            Accept this <a href="https://classroom.github.com/a/3vZiynjk" className="underline text-[#00ccff]">GitHub Classroom assignment</a>.
 
                         </p>
                         <p className="mt-4">
