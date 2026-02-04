@@ -15,7 +15,7 @@ export const projects = [
       project: "Warmup 2",
       checkpoint: "Gameworld, ECS, Systems",
       dateDue: "2/25",
-      link: "",
+      link: "/assignment3",
     },
     {
       project: "Platformer",

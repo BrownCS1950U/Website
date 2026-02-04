@@ -66,7 +66,13 @@ export const sections = [
       ],
     },
     {
-      title: "Engine Architecture",
-      links: [{ href: "https://gpfault.net/posts/mapping-types-to-values.txt.html", label: "C++ TypeMaps" }],
+      title: "Miscellaneous Material",
+      links: [
+        { href: "https://gpfault.net/posts/mapping-types-to-values.txt.html", label: "C++ TypeMaps" },
+        { href: "https://www.gamedeveloper.com/" , label: "Game Developer Website"},
+        { href: "https://www.dataorienteddesign.com/dodmain/dodmain.html", label: "Data-Oriented Design by Richard Fabian" },
+        { href: "https://gafferongames.com/post/fix_your_timestep/", label: "Fix Your Timestep!" },
+      ],
+
     },
   ];

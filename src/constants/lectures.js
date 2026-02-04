@@ -9,7 +9,7 @@ export const lectures = [
     date: "1/28",
     class: "2",
     topic: "Applications and Screens",
-    googleSlides: "https://docs.google.com/presentation/d/1ArSOI6GoevVd7yDJ6t4wy14rhHGeHjbE/edit?usp=sharing&ouid=105263982593318355462&rtpof=true&sd=true",
+    googleSlides: "https://docs.google.com/presentation/d/1ArSOI6GoevVd7yDJ6t4wy14rhHGeHjbE/edit",
   },
   {
     date: "2/4",
