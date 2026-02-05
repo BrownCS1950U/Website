@@ -12,7 +12,7 @@ export const labs = [
   {
     topic: "Lab 3 - Collision Debugger",
     date: "3/11",
-    slides: ""
+    slides: "lab3"
   },
   {
     topic: "Lab 4 - Animations",
