@@ -15,7 +15,7 @@ export const lectures = [
     date: "2/4",
     class: "3",
     topic: "Game Worlds, Entity Component System, Collisions Intro",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1wCG1-e4uG0IxOFUEZKWBT7Wb7EIpJWA6/edit?usp=sharing&ouid=105263982593318355462&rtpof=true&sd=true",
   },
   {
     date: "2/11",
