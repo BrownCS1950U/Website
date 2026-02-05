@@ -4,18 +4,21 @@ export const lectures = [
     class: "1",
     topic: "Course Intro, Basic Engine Architecture, Camera and Game Loops",
     googleSlides: "https://docs.google.com/presentation/d/1XUIzK4t-KBSompqcti0fThZbQcvcsJvEHcBUbK9KWeQ/edit?usp=sharing",
+    zoomRecording: "",
   },
   {
     date: "1/28",
     class: "2",
     topic: "Applications and Screens",
     googleSlides: "https://docs.google.com/presentation/d/1ArSOI6GoevVd7yDJ6t4wy14rhHGeHjbE/edit",
+    zoomRecording: "",
   },
   {
     date: "2/4",
     class: "3",
     topic: "Game Worlds, Entity Component System, Collisions Intro",
     googleSlides: "https://docs.google.com/presentation/d/1wCG1-e4uG0IxOFUEZKWBT7Wb7EIpJWA6/edit?usp=sharing&ouid=105263982593318355462&rtpof=true&sd=true",
+    zoomRecording: "https://drive.google.com/file/d/16dqkBhGDJqJOMovi_ZvqPPiPhPAMpkRJ/view?usp=sharing",
   },
   {
     date: "2/11",

@@ -27,6 +27,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
               <th className={`text-left ${commonClasses}`}>Topic</th>
               <th className={`px-5 text-right ${commonClasses}`}>Date</th>
               <th className={`text-right ${commonClasses}`}>Google Slides</th>
+              <th className={`text-right ${commonClasses}`}>Zoom Recordings</th>
             </>
           )}
         </tr>
@@ -92,6 +93,21 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                       style={{ color: "#b30000", fontWeight: "bold" }}
                     >
                       Slides
+                    </a>
+                  ) : (
+                    "-"
+                  )}
+                </td>
+                <td className="text-right">
+                  {item.zoomRecording ? (
+                    <a
+                      className="hover-glow focus:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={item.zoomRecording}
+                      style={{ color: "#b30000", fontWeight: "bold" }}
+                    >
+                      Recording
                     </a>
                   ) : (
                     "-"
