@@ -24,7 +24,8 @@ export const lectures = [
     date: "2/11",
     class: "4",
     topic: "Sphere/AAB/Cylinder Collisions",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1B2wfdZw76xD3ZVI88ExtCDhWtATSDUG3/edit?usp=sharing&ouid=105263982593318355462&rtpof=true&sd=true",
+    zoomRecording: "https://drive.google.com/file/d/1hQJhgYo_J4e0g8xbxhVgOBgzapQw6AzN/view?usp=drive_link",
   },
   {
     date: "2/18",
