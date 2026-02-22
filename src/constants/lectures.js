@@ -31,7 +31,8 @@ export const lectures = [
     date: "2/18",
     class: "5",
     topic: "GJK, EPA Algorithms",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1X5arV3-R21JVZci_cx4tmGSWAotypfqB/edit?usp=sharing&ouid=105263982593318355462&rtpof=true&sd=true",
+    zoomRecording: "https://drive.google.com/file/d/17lUKvhNH9Z7PWRpbGX1cGAFNKA8FNrE9/view?usp=drive_link",
   },
   {
     date: "2/25",
