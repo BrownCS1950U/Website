@@ -25,35 +25,35 @@ const Assignment4 = () => {
 
                     <h2 className="mt-10 text-3xl text-[#b30000] font-bold">Directions</h2>
                     <p className="mt-4">
-                        You get to choose whether you implement ellipsoid-triangle collisions or the GJK algorithm and the Expanding Polytope Algorithm. 
-                        Then, you will load obj files into your engine. 
+                        You get to choose whether you implement ellipsoid-triangle collisions (with CCD), capsule-triangle collisions (also with CCD), or GJK/EPA algorithm.
+                        Then, you will load game object files into your engine.
                         Finally, you will create smooth player movement across the environment.
                     </p>
 
                     <h2 className="mt-10 text-3xl text-[#b30000] font-bold">Design Check</h2>
                     <p className="mt-4">
-                      In the notes section of your github release, please write a brief paragraph 
+                      In the notes section of your github release, please write a brief paragraph
                       explaining some of your design choices.
 
                       Here are a few questions to help you think about your design and your implementation:
                     </p>
 
                     <p className="mt-4 underline">
-                        Ellipsoid–Triangle
+                        Ellipsoid–Triangle/Capsule-Triangle
                     </p>
                     <ul className="list-disc ml-6 mt-4 space-y-2">
                       <li>
-                        What transformations do we apply to collide an ellipsoid with a triangle?
+                        What transformations do we apply to collide an ellipsoid or a capsule with a triangle?
                       </li>
                       <li>
-                        What are the 3 cases for colliding with a triangle? 
+                        What are the 3 cases for colliding with a triangle?
                         How will you order them and when can you have an early exit?
                       </li>
                       <li>
-                        What are the relevant pieces of information you will store when an ellipsoid collides with a triangle? 
+                        What are the relevant pieces of information you will store when an ellipsoid/capsule collides with a triangle?
                       </li>
                       <li>
-                        What is the “mtv slide”, and why is it necessary for proper movement? 
+                        What is the “mtv slide”, and why is it necessary for proper movement?
                       </li>
                       <li>
                         What is the purpose of the "nudging" hack?
@@ -76,28 +76,28 @@ const Assignment4 = () => {
                     </ul>
 
                     <h2 className="mt-10 text-3xl text-[#b30000] font-bold">Engine Requirements</h2>
-                    
+
                     <p className="mt-4 underline">
-                        Ellipsoid–Triangle
+                        Ellipsoid–Triangle/Capsule-Triangle
                     </p>
                     <ul className="list-disc ml-6 mt-4 space-y-2">
                       <li>
-                        Ellipsoid-triangle collision
+                        Ellipsoid-triangle/Capsule-triangle collision
                       </li>
                       <li>
-                        Ellipsoid-edge collision
+                        Ellipsoid-edge/Capsule-edge collision
                       </li>
                       <li>
-                        Ellipsoid-vertex collision
+                        Ellipsoid-vertex/Capsule-vertex collision
                       </li>
                       <li>
                         All collision tests return the correct time of intersection
                       </li>
                       <li>
-                        Collision routines return the point of contact and contact normal
+                        Collision routines return the point of contact and MTV
                       </li>
                       <li>
-                        Loading in an environment obj file
+                        Loading in an environment asset file (obj or similar)
                       </li>
                       <li>
                         Smooth player movement across trimesh environment
@@ -109,16 +109,16 @@ const Assignment4 = () => {
                     </p>
                     <ul className="list-disc ml-6 mt-4 space-y-2">
                       <li>
-                        GJK implementation  
+                        GJK implementation
                       </li>
                       <li>
                         EPA implementation
                       </li>
                       <li>
-                        Marginal collision detection for spheres and or capsules, and marginal collision detection for general shallow collisions
+                        Collision routines return the point of contact and MTV
                       </li>
                       <li>
-                        Loading in environment obj file
+                        Loading in environment asset file (obj or similar)
                       </li>
                       <li>
                         Smooth player movement across environment
@@ -127,14 +127,14 @@ const Assignment4 = () => {
 
                     <br></br>
                     <p className="mt-4">
-                        When we say "smooth player movement" we mean that the player should navigate and 
+                        When we say "smooth player movement" we mean that the player should navigate and
                         "walk" around the environment without unexpectedly getting stuck or appearing to glitch.
                         Also, the player's motion and speed should not appear choppy.
                     </p>
 
                     <br></br>
                     <p className="mt-4">
-                        Here are a few websites for downloading obj models that you might want to load into your game:
+                        Here are a few websites for downloading game assets that you might want to load into your game:
                     </p>
                     <ul className="list-disc ml-6 mt-4 space-y-2">
                       <li>
@@ -171,12 +171,34 @@ const Assignment4 = () => {
 
                     <h2 className="mt-10 text-3xl text-[#b30000] font-bold">Game Requirements</h2>
                     <p className="mt-4">
-                      Now that you have some advanced collisions, you can branch out to be creative. 
-                      Make something cool! Using your cylinder-cylinder collisions you can make pickup-able items, 
-                      enemies, and more on top of your new ability to traverse arbitrary environments. 
-                      (We may award extra credit to games with some extra effort put in!)
+                      Now that you have some advanced collisions, you can branch out to be creative.
+                      Make something cool! Using your cylinder-cylinder collisions you can make pickup-able items,
+                      enemies, and more on top of your new ability to traverse arbitrary environments.
+                      (We will award extra credit to games with some extra effort put in!)
                     </p>
 
+                    <h2 className="mt-10 text-3xl text-[#b30000] font-bold">Extra Credit</h2>
+                    <p className="mt-4">
+                      <ul className="list-disc ml-6 mt-4 space-y-2">
+                      <li>
+                        <b>Capsule-triangle collisions with CCD:</b> We went through the math for ellipsoid-triangle collisions in class, you can follow the same approach to derive capsule-triangle collisions.
+                      </li>
+                      <li>
+                        <b>Rigid body physics:</b> Implement a simple rigid body physics system with both linear and rotational motion.
+                      </li>
+                      <li>
+                        <b>Player animations:</b> Add some player animations for your game.
+                      </li>
+                      <li>
+                        <b>Convex-hull decomposition:</b> Implement a simple convex-hull decomposition system for complex meshes.
+                        Feel free to integrate off-the-shelf libraries such as: <a href="https://github.com/kmammou/v-hacd" target="_blank" rel="noopener noreferrer" className="underline text-[#00ccff]">V-HACD</a>, <nbsp/>
+                        <a href="https://github.com/libigl/libigl" target="_blank" rel="noopener noreferrer" className="underline text-[#00ccff]">libigl</a>, or any other library you find helpful.
+                      </li>
+                      <li>
+                        <b>Creative effort in your game!</b>
+                      </li>
+                      </ul>
+                    </p>
                 </div>
             </div>
         </>
