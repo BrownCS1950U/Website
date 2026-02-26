@@ -38,8 +38,8 @@ export const lectures = [
     date: "2/25",
     class: "6",
     topic: "Animations, Spatial Acceleration Data Structures",
-    googleSlides: "",
-    zoomRecording:"",
+    googleSlides: "https://docs.google.com/presentation/d/1qpHSN5f9vngUJ7cMUdDNDimAWlBgu_wT/edit?usp=sharing&ouid=105263982593318355462&rtpof=true&sd=true",
+    zoomRecording:"https://drive.google.com/file/d/1ny1pToIOzuII63OZq4p2Gev_Ofc5dR74/view?usp=sharing",
   },
   {
     date: "3/4",
