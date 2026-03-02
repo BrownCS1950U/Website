@@ -21,7 +21,7 @@ export const projects = [
       project: "Platformer",
       checkpoint: "Platformer 1 (Collisions)",
       dateDue: "3/11",
-      link: "",
+      link: "/assignment4",
     },
     {
       project: "Platformer 2",
@@ -29,21 +29,21 @@ export const projects = [
       dateDue: "4/1",
       link: "",
     },
-    
+
     {
       project: "Platformer 3",
       checkpoint: "Pathfinding, AI",
       dateDue: "4/15",
       link: "",
     },
-    
+
     {
       project: "Final Project",
       checkpoint: "Submission",
       dateDue: "5/5",
       link: "",
     },
-    
+
     {
       project: "Final Project",
       checkpoint: "Presentation",
@@ -51,4 +51,3 @@ export const projects = [
       link: "",
     },
   ];
-  
