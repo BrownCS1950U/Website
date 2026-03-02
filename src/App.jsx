@@ -12,6 +12,7 @@ import AssignmentPage6 from "./components/AssignmentHandouts/Assignment6";
 import LabPage1 from "./components/LabHandouts/Lab1";
 import LabPage2 from "./components/LabHandouts/Lab2";
 import LabPage3 from "./components/LabHandouts/Lab3";
+import LabPage4 from "./components/LabHandouts/Lab4";
 
 
 import CollaborationPolicy from "./components/CollaborationPolicy";
@@ -97,6 +98,7 @@ const App = () => {
           <Route path="/lab1" element={<LabPage1 />} />
           <Route path="/lab2" element={<LabPage2 />} />
           <Route path="/lab3" element={<LabPage3 />} />
+          <Route path="/lab4" element={<LabPage4 />} />
 
           <Route path="/collaboration-policy" element={<CollaborationPolicy />} />
           <Route path="/syllabus" element={<Syllabus />} />
