@@ -45,7 +45,8 @@ export const lectures = [
     date: "3/4",
     class: "7",
     topic: "Rendering GPU Optimizations, Final Project Topics",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1gXAgsQzvhArkLow22w3IJTh7_5K9LngE/edit?usp=sharing&ouid=105263982593318355462&rtpof=true&sd=true",
+    zoomRecording:"https://drive.google.com/file/d/1rplmOuHLWlo_-O_7L2D2esvVtob57xEN/view?usp=sharing",
   },
   {
     date: "3/11",
