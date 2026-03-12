@@ -53,6 +53,7 @@ export const lectures = [
     class: "8",
     topic: "Architecture Check, Final Project Ideas",
     googleSlides: "",
+    zoomRecording: "https://drive.google.com/file/d/1w_wOA8Ftz4nU9eS45ow1uQ5u4OLggcaa/view?usp=sharing",
   },
   {
     date: "3/18",
