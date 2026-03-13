@@ -27,7 +27,7 @@ export const projects = [
       project: "Platformer 2",
       checkpoint: "Optimizations",
       dateDue: "4/1",
-      link: "",
+      link: "/assignment5",
     },
 
     {
