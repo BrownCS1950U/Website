@@ -19,7 +19,7 @@ const Assignment5 = () => {
                 {/* Doom-style centered content panel */}
                 <div className="w-full max-w-4xl bg-black/60 border border-black p-10 text-white rounded-md backdrop-blur-sm">
                     <h1 className="text-5xl font-doom text-[#b30000] mb-4">
-                        Platformer 5
+                        Platformer 2
                     </h1>
                     <p className="mt-2 font-bold">Due: 4/1/26 @ 3 PM</p>
 
