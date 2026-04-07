@@ -71,7 +71,8 @@ export const lectures = [
     date: "4/1",
     class: "11",
     topic: "AI and Pathfinding",
-    googleSlides: "",
+    googleSlides: "https://docs.google.com/presentation/d/1OGrtiVOf_-z6enzax3-y5iwkzd_Els1r/edit?usp=sharing&ouid=105263982593318355462&rtpof=true&sd=true",
+    zoomRecording: "https://drive.google.com/file/d/17as2xVpkShNvL5fErEakMZjOZnWgxGza/view?usp=drive_link",
   },
   {
     date: "4/8",

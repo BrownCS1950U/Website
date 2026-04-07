@@ -34,7 +34,7 @@ export const projects = [
       project: "Platformer 3",
       checkpoint: "Pathfinding, AI",
       dateDue: "4/15",
-      link: "",
+      link: "/assignment6",
     },
 
     {

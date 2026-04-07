@@ -22,6 +22,6 @@ export const labs = [
   {
     topic: "Lab 5 - 3D Audio (Optional)",
     date: "4/8",
-    slides: ""
+    slides: "lab5"
   },
 ];
