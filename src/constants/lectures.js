@@ -84,7 +84,16 @@ export const lectures = [
     date: "4/15",
     class: "13",
     topic: "Guest Lectures",
-    googleSlides: "",
+    googleSlides: [
+      {
+        label: "Slides1",
+        href: "https://docs.google.com/presentation/d/1D_QYk_Tz5ptirAJaCCnTgXY3lVlmP9LODWSU-yHZWG4/edit?usp=sharing",
+      },
+      {
+        label: "Slides2",
+        href: "https://docs.google.com/presentation/d/1TDAP3NY9CPqhqPQa5U-bj5H76bHUWBi-X3nBy-jqYcw/edit?usp=sharing",
+      },
+    ],
     zoomRecording: "https://drive.google.com/file/d/1FxW-uK4diqZ4ZcNDUBVt1fHVvnFUeH-z/view?usp=drive_link"
   },
   {

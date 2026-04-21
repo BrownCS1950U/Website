@@ -1,6 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const normalizeLectureSlides = (googleSlides) => {
+  if (!googleSlides) {
+    return [];
+  }
+
+  if (Array.isArray(googleSlides)) {
+    return googleSlides.map((slide, index) => {
+      if (typeof slide === "string") {
+        return {
+          label: `Slides${index + 1}`,
+          href: slide,
+        };
+      }
+
+      return {
+        label: slide.label || `Slides${index + 1}`,
+        href: slide.href,
+      };
+    });
+  }
+
+  return [
+    {
+      label: "Slides",
+      href: googleSlides,
+    },
+  ];
+};
+
 const Table = ({ data, lectures = false, projects = false, labs = false }) => {
   const commonClasses =
     "pb-3 text-[#00CCFF] font-display ease-out duration-500 neon-text-red font-bold";
@@ -34,9 +63,12 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
       </thead>
 
       <tbody>
-        {data.map((item, index) => (
-          <tr key={index}>
-            {projects ? (
+        {data.map((item, index) => {
+          const lectureSlides = normalizeLectureSlides(item.googleSlides);
+
+          return (
+            <tr key={index}>
+              {projects ? (
               <>
                 <td className="py-3 text-left">{item.project}</td>
                 <td className="px-5 text-left">{item.checkpoint}</td>
@@ -58,7 +90,7 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                   )}
                 </td>
               </>
-            ) : labs ? (
+              ) : labs ? (
               <>
                 <td className="py-3 text-left">{item.topic}</td>
                 <td className="px-5 text-right">{item.date}</td>
@@ -78,22 +110,29 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                   )}
                 </td>
               </>
-            ) : (
+              ) : (
               <>
                 <td className="py-3 text-left">{item.topic}</td>
                 <td className="px-5 text-right">{item.date}</td>
 
                 <td className="text-right">
-                  {item.googleSlides ? (
-                    <a
-                      className="hover-glow focus:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={item.googleSlides}
-                      style={{ color: "#b30000", fontWeight: "bold" }}
-                    >
-                      Slides
-                    </a>
+                  {lectureSlides.length > 0 ? (
+                    <span>
+                      {lectureSlides.map((slide, slideIndex) => (
+                        <React.Fragment key={slide.href || slideIndex}>
+                          {slideIndex > 0 ? ", " : ""}
+                          <a
+                            className="hover-glow focus:underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={slide.href}
+                            style={{ color: "#b30000", fontWeight: "bold" }}
+                          >
+                            {slide.label}
+                          </a>
+                        </React.Fragment>
+                      ))}
+                    </span>
                   ) : (
                     "-"
                   )}
@@ -131,9 +170,10 @@ const Table = ({ data, lectures = false, projects = false, labs = false }) => {
                   </td>
                 )}
               </>
-            )}
-          </tr>
-        ))}
+              )}
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
