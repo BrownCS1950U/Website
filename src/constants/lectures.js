@@ -85,6 +85,7 @@ export const lectures = [
     class: "13",
     topic: "Guest Lectures",
     googleSlides: "",
+    zoomRecording: "https://drive.google.com/file/d/1FxW-uK4diqZ4ZcNDUBVt1fHVvnFUeH-z/view?usp=drive_link"
   },
   {
     date: "4/22",
