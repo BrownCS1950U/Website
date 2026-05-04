@@ -48,6 +48,6 @@ export const projects = [
       project: "Final Project",
       checkpoint: "Presentation",
       dateDue: "5/6",
-      link: "",
+      link: "https://forms.gle/pog2PcraJuKnfb9d6",
     },
   ];

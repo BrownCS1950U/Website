@@ -80,7 +80,7 @@ const Assignment7 = () => {
 
                     <h2 className="mt-10 text-3xl text-[#b30000] font-bold">Final Handin</h2>
                     <p className="mt-4"><strong>Due May 5th, 2025 - VIDEO SUBMISSION: 1:30 - 3:00 MINUTE GAMEPLAY</strong></p>
-                    <p className="mt-4">Final project presentations will be on May 6 at 4 pm.</p>
+                    <p className="mt-4">Final project presentations will be on May 6 at 3 pm.</p>
 
                     <h2 className="mt-10 text-3xl text-[#b30000] font-bold">Engine/Game Features</h2>
                     <p className="mt-4">Keep in mind that there are tutorials online providing implementations 
